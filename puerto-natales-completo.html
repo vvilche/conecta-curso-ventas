@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Central Puerto Natales — Propuesta Completa | CONECTA</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--accent:#2563eb;--text:#1e293b;--muted:#64748b;--success:#10b981;--warn:#d97706;--red:#ef4444;--radius:12px;--dark:#071324}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.7}.container{max-width:1100px;margin:0 auto;padding:1.5rem}h1{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent)}h2{font-family:'Outfit',sans-serif;font-size:1.1rem;color:var(--accent);margin:2.5rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}h3{font-family:'Outfit',sans-serif;font-size:.95rem;margin:1rem 0 .5rem}.sub{color:var(--muted);font-size:.8rem;margin-bottom:1rem}.hero{background:linear-gradient(135deg,var(--dark),#1e3a8a);color:#fff;border-radius:var(--radius);padding:2rem;text-align:center;margin-bottom:1.5rem}.hero h1{color:#fff;font-size:1.8rem}.hero p{opacity:.8;font-size:.9rem;margin-top:.5rem}.hero-stats{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}.hstat{text-align:center;padding:.5rem 1rem;background:rgba(255,255,255,.1);border-radius:8px;color:#fff}.hstat-n{font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700}.hstat-l{font-size:.6rem;text-transform:uppercase;opacity:.7}.nav{display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center;margin:1.5rem 0;position:sticky;top:0;z-index:10;background:var(--bg);padding:.5rem 0}.nav a{text-decoration:none;padding:.3rem .7rem;border:1px solid var(--border);border-radius:100px;font-size:.7rem;color:var(--accent);font-weight:500}.nav a:hover,.nav a.on{background:var(--accent);color:#fff;border-color:var(--accent)}.diagram-container{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:1rem 0;overflow-x:auto}.diagram-container h3{font-size:.85rem;display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}.section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin:.75rem 0}table{width:100%;border-collapse:collapse;font-size:.75rem;margin:.5rem 0;border-radius:8px;overflow:hidden}th{text-align:left;padding:.4rem .6rem;background:#f1f5f9;font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}td{padding:.4rem .6rem;border-bottom:1px solid var(--border)}.win td{background:#f0fdf4;font-weight:600}.lose td{background:#fef2f2;color:var(--muted)}.method-step{display:flex;gap:1rem;align-items:flex-start;margin:.75rem 0}.step-num{min-width:30px;height:30px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0}.step-content h4{font-size:.82rem;margin-bottom:.1rem}.step-content p{font-size:.75rem;color:var(--muted)}.badge{display:inline-block;padding:.1rem .35rem;border-radius:100px;font-size:.6rem;font-weight:700}.b-red{background:#fef2f2;color:var(--red)}.b-orange{background:#fff7ed;color:var(--warn)}.b-green{background:#f0fdf4;color:var(--success)}.b-blue{background:#eff6ff;color:var(--accent)}.b-purple{background:rgba(124,58,238,.08);color:#7c3aed}.highlight{background:rgba(37,99,235,.03);border-left:3px solid var(--accent);padding:.6rem 1rem;margin:.5rem 0;font-size:.8rem}.partner-grid{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}.partner-card{flex:1;min-width:130px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.8rem;text-align:center}.partner-card .name{font-weight:700;font-size:.75rem}.partner-card .role{font-size:.6rem;color:var(--muted);margin-top:.2rem}svg{width:100%;max-width:1000px;height:auto}footer{text-align:center;padding:2rem;color:var(--muted);font-size:.68rem}@media(max-width:700px){.partner-card{min-width:110px}}</style></head><body><div class="container">
+
+<!-- HERO -->
+<div class="hero">
+<h1>⚡ Central Puerto Natales</h1>
+<p>Levantamiento · Arquitectura · Metodología · Anexo Técnico</p>
+<div class="hero-stats">
+<div class="hstat"><div class="hstat-n">11</div><div class="hstat-l">Unidades</div></div>
+<div class="hstat"><div class="hstat-n">6</div><div class="hstat-l">Necesitan Retrofit</div></div>
+<div class="hstat"><div class="hstat-n">253 km</div><div class="hstat-l">Control Remoto</div></div>
+<div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Partners</div></div>
+</div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+<a href="#diagnostico" class="on">Diagnóstico</a>
+<a href="#arq-actual">Arq. Actual</a>
+<a href="#arq-propuesta">Arq. Propuesta</a>
+<a href="#flujo">Flujo Remoto</a>
+<a href="#metodologia">Metodología</a>
+<a href="#anexo">Anexo Técnico</a>
+</div>
+
+<!-- ===== DIAGNÓSTICO ===== -->
+<h2 id="diagnostico">🔍 DIAGNÓSTICO POR UNIDAD</h2>
+<table>
+<tr><th>UG</th><th>Tecnología</th><th>Potencia</th><th>Año</th><th>Control Actual</th><th>Estado Operativo</th><th>Qué necesita</th></tr>
+<tr><td>UG 3</td><td>Waukesha Gas</td><td>1.18 MW</td><td>2001</td><td><span class="badge b-red">Relés — Lógica cableada</span></td><td>Limitada 620 kW</td><td>PLC + comunicación</td></tr>
+<tr><td>UG 4</td><td>Solar Saturno Dual</td><td>0.8 MW</td><td>1976</td><td><span class="badge b-red">Relés — Lógica cableada</span></td><td>Sin diésel operativo</td><td>PLC + comunicación</td></tr>
+<tr><td>UG 5</td><td>Solar Saturno Dual</td><td>0.8 MW</td><td>1976</td><td><span class="badge b-red">Relés — Lógica cableada</span></td><td>Sin diésel operativo</td><td>PLC + comunicación</td></tr>
+<tr><td>UG 6</td><td>Caterpillar BF</td><td>1.5 MW</td><td>1997</td><td><span class="badge b-orange">PLC Allen-Bradley parcial</span></td><td>Sin bi-fuel</td><td>PLC completo + SCADA</td></tr>
+<tr><td>UG 8</td><td>Waukesha Gas</td><td>1.18 MW</td><td>1991</td><td><span class="badge b-red">Relés — Lógica cableada</span></td><td>Limitada 620 kW</td><td>PLC + comunicación</td></tr>
+<tr><td>UG 9</td><td>Jenbacher Gas</td><td>1.42 MW</td><td>2007</td><td><span class="badge b-green">PC Industrial + HMI</span></td><td>OK · Plataforma web caída</td><td>Integrar SCADA</td></tr>
+<tr><td>UG 10</td><td>Palmero Diésel</td><td>1.36 MW</td><td>2007</td><td><span class="badge b-red">Relés — Lógica cableada</span></td><td>Limitada 600 kW</td><td>PLC + comunicación</td></tr>
+<tr><td>UG 11</td><td>Jenbacher Gas</td><td>1.42 MW</td><td>2012</td><td><span class="badge b-green">PC Industrial + HMI</span></td><td>OK · Plataforma web caída</td><td>Integrar SCADA</td></tr>
+<tr><td>UG 12</td><td>Caterpillar BF</td><td>1.4 MW</td><td>2002</td><td><span class="badge b-orange">EMCP-2 + EGCP-2</span></td><td>OK · Bi-fuel funcional</td><td>Gateway comunicación</td></tr>
+<tr><td>UG 13</td><td>Solar Centauro Dual</td><td>4.5 MW</td><td>2015</td><td><span class="badge b-green">PLC AB 1200XT + web</span></td><td>OK · Control remoto activo</td><td>Integrar SCADA unificado</td></tr>
+<tr><td>UG 15</td><td>Caterpillar Gas</td><td>1.9 MW</td><td>2020</td><td><span class="badge b-green">EMCP 4.3 + DEIF</span></td><td>OK · Plataforma web caída</td><td>Integrar SCADA</td></tr>
+</table>
+
+
+<div class="section" style="margin-top:1.5rem">
+<h3>📄 Evidencia del Informe de Levantamiento (Fuente: PDF 40 páginas, julio 2025)</h3>
+<table>
+<tr><th>Página</th><th>Hallazgo</th><th>Cita textual del informe</th></tr>
+<tr><td>p.4</td><td>Resumen Ejecutivo</td><td>"La central presenta una heterogeneidad tecnológica significativa: algunas UG cuentan con sistemas modernos, mientras que otras operan con lógica cableada sin sistema de control integrado y sin comunicación."</td></tr>
+<tr><td>p.5</td><td>UG 3 Waukesha</td><td>"El sistema de control no cuenta con módulos de comunicación, lo que impide su monitoreo y control desde un sistema SCADA. La operación se realiza directamente desde un panel remoto."</td></tr>
+<tr><td>p.7</td><td>UG 4 Solar Saturno</td><td>"El sistema de control no cuenta con módulos de comunicación, lo que impide su monitoreo y control desde un sistema SCADA."</td></tr>
+<tr><td>p.9</td><td>UG 5 Solar Saturno</td><td>"El sistema de control no cuenta con módulos de comunicación, lo que impide su monitoreo y control desde un sistema SCADA."</td></tr>
+<tr><td>p.11</td><td>UG 6 Caterpillar</td><td>"Existe PLC Allen Bradley, pero este solo ejecuta funciones específicas y no está diseñado para controlar todos los procesos de la unidad generadora."</td></tr>
+<tr><td>p.13</td><td>UG 8 Waukesha</td><td>"Existe PLC Allen Bradley, pero este solo ejecuta funciones específicas. El sistema de control no cuenta con módulos de comunicación."</td></tr>
+<tr><td>p.15</td><td>UG 9 Jenbacher</td><td>"El sistema de control permite la operación a distancia... Actualmente la plataforma web no está operativa."</td></tr>
+<tr><td>p.17</td><td>UG 10 Palmero</td><td>"El sistema de control no cuenta con módulos de comunicación, lo que impide su monitoreo y control desde un sistema SCADA."</td></tr>
+<tr><td>p.19</td><td>UG 11 Jenbacher</td><td>"La plataforma web actualmente no está operativa. El computador solo está monitoreando a la unidad Jenbacher N°9."</td></tr>
+<tr><td>p.25</td><td>UG 15 Caterpillar</td><td>"Actualmente esta plataforma no está operativa, por lo cual el operador no puede monitorear ni controlar la unidad a distancia desde su escritorio."</td></tr>
+<tr><td>p.29-31</td><td>Sistemas de diésel</td><td>"El sistema de recepción de combustibles está compuesto por válvulas manuales. El accionamiento de las bombas de descarga es manual." (p.29, 30, 31)</td></tr>
+<tr><td>p.34</td><td>SCADA actual</td><td>"Existen dos sistemas SCADA. El primero monitorea UG, cabecera, batería gas y estanque diésel. No está implementado control sobre ningún equipo de la central."</td></tr>
+<tr><td>p.36</td><td>Objetivo del proyecto</td><td>"El propósito de esta ingeniería conceptual es definir una solución integral que permita la operación remota de la Central Puerto Natales desde Punta Arenas."</td></tr>
+<tr><td>p.37</td><td>Requerimientos</td><td>"Retrofit en unidades antiguas: instalación de PLC industriales con módulos de comunicación Ethernet y protocolos estándar (Modbus TCP, DNP3)."</td></tr>
+<tr><td>p.38</td><td>Fases propuestas</td><td>"Fase 2: Instalar PLC y módulos de comunicación en UG 3, 4, 5, 6, 8 y 10. Automatizar bombas y válvulas para permitir control remoto."</td></tr>
+<tr><td>p.39</td><td>Arquitectura SCADA</td><td>"El SCADA corporativo será el núcleo del sistema, con servidores redundantes y acceso seguro desde Punta Arenas."</td></tr>
+</table>
+</div>
+
+<h3>⚠️ Sistemas Auxiliares — Estado Actual</h3>
+<table>
+<tr><th>Sistema</th><th>Estado</th><th>Acción</th></tr>
+<tr><td>Recepción / Distribución diésel</td><td><span class="badge b-red">100% Manual</span> — Válvulas y bombas manuales</td><td>Motorizar + PLC + SCADA</td></tr>
+<tr><td>Batería de gas</td><td><span class="badge b-orange">Medidores locales</span> — UG 15 sin medidor</td><td>Medidores Modbus</td></tr>
+<tr><td>Refrigeración UG</td><td><span class="badge b-red">Interruptor manual</span></td><td>Control automático</td></tr>
+<tr><td>Protecciones</td><td><span class="badge b-orange">Micom P141 obsoletos</span></td><td>IEC 61850 modernos</td></tr>
+<tr><td>Interruptores</td><td><span class="badge b-orange">Isodel Sprecher antiguos</span></td><td>Celdas motorizadas</td></tr>
+<tr><td>SCADA</td><td><span class="badge b-red">2 sistemas independientes</span> sin integración</td><td>Unificar en ECS-700</td></tr>
+</table>
+
+<!-- ===== ARQUITECTURA ACTUAL ===== -->
+<h2 id="arq-actual">📡 ARQUITECTURA ACTUAL — Sistemas Aislados</h2>
+
+<div class="diagram-container">
+<h3><span style="width:10px;height:10px;background:var(--red);border-radius:50%;display:inline-block"></span> Estado Actual: 2 SCADAs independientes · 6 UG sin comunicación · Auxiliares manuales</h3>
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="600" fill="#f8fafc" rx="8"/>
+  <rect x="350" y="20" width="300" height="55" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="500" y="45" text-anchor="middle" font-size="11" fill="#64748b" font-weight="600">PUNTA ARENAS (253 km)</text>
+  <text x="500" y="62" text-anchor="middle" font-size="9" fill="#94a3b8">Sin control remoto operativo</text>
+  <text x="500" y="98" text-anchor="middle" font-size="22" fill="#ef4444">✕</text>
+  <ellipse cx="500" cy="155" rx="80" ry="30" fill="#e2e8f0" stroke="#94a3b8"/><text x="500" y="155" text-anchor="middle" font-size="9" fill="#64748b">MPLS Entel</text>
+  
+  <rect x="150" y="200" width="700" height="380" rx="10" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
+  <text x="500" y="225" text-anchor="middle" font-size="12" fill="#1e3a8a" font-weight="700">CENTRAL PUERTO NATALES</text>
+  
+  <rect x="180" y="245" width="300" height="65" rx="6" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="330" y="268" text-anchor="middle" font-size="9" font-weight="700" fill="#ef4444">SCADA 1 — Monitoreo</text>
+  <text x="330" y="283" text-anchor="middle" font-size="7" fill="#64748b">Solo visualiza UG, cabecera, gas, diésel</text>
+  <text x="330" y="298" text-anchor="middle" font-size="8" fill="#ef4444">❌ Sin control sobre equipos</text>
+  
+  <rect x="520" y="245" width="300" height="65" rx="6" fill="#fffbeb" stroke="#fcd34d"/>
+  <text x="670" y="268" text-anchor="middle" font-size="9" font-weight="700" fill="#d97706">SCADA 2 — Distribución</text>
+  <text x="670" y="283" text-anchor="middle" font-size="7" fill="#64748b">Controla reconectadores y motor Castillo</text>
+  <text x="670" y="298" text-anchor="middle" font-size="8" fill="#d97706">⚠ No integrado con SCADA 1</text>
+  
+  <rect x="250" y="330" width="140" height="50" rx="5" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="320" y="350" text-anchor="middle" font-size="8" font-weight="700" fill="#10b981">UG 9, 11, 13, 15</text>
+  <text x="320" y="365" text-anchor="middle" font-size="7" fill="#64748b">Moderna · No integrada</text>
+  
+  <rect x="420" y="330" width="160" height="50" rx="5" fill="#fffbeb" stroke="#fcd34d"/>
+  <text x="500" y="350" text-anchor="middle" font-size="8" font-weight="700" fill="#d97706">UG 6, 12</text>
+  <text x="500" y="365" text-anchor="middle" font-size="7" fill="#64748b">PLC parcial / EMCP-2</text>
+  
+  <rect x="610" y="330" width="200" height="50" rx="5" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="710" y="350" text-anchor="middle" font-size="8" font-weight="700" fill="#ef4444">UG 3, 4, 5, 8, 10</text>
+  <text x="710" y="365" text-anchor="middle" font-size="7" fill="#ef4444">LÓGICA CABLEADA · CERO COMUNICACIÓN</text>
+  
+  <rect x="180" y="400" width="300" height="55" rx="5" fill="#fef2f2" stroke="#fca5a5"/>
+  <text x="330" y="420" text-anchor="middle" font-size="9" font-weight="700" fill="#ef4444">SISTEMAS AUXILIARES</text>
+  <text x="330" y="438" text-anchor="middle" font-size="7" fill="#64748b">Bombas · Válvulas · Refrigeración — 100% MANUAL</text>
+  
+  <rect x="520" y="400" width="300" height="55" rx="5" fill="#fffbeb" stroke="#fcd34d"/>
+  <text x="670" y="420" text-anchor="middle" font-size="9" font-weight="700" fill="#d97706">PROTECCIONES</text>
+  <text x="670" y="438" text-anchor="middle" font-size="7" fill="#64748b">Micom P141 · Isodel Sprecher · Sin IEC 61850</text>
+  
+  <line x1="490" y1="245" x2="490" y2="465" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="490" y="488" text-anchor="middle" font-size="8" fill="#ef4444" font-weight="700">DOS SISTEMAS AISLADOS — SIN INTEGRACIÓN</text>
+</svg>
+</div>
+<div class="highlight" style="margin-top:.5rem"><strong>📄 Fuente de diagnóstico:</strong> "Levantamiento e Ingeniería Conceptual Automatización Central Puerto Natales" — 40 páginas, julio 2025. Parte 1: Estado Actual de Equipos y Sistemas (pp.4-34). Parte 2: Ingeniería Conceptual para Automatización y Control Remoto (pp.36-39).</div>
+
+<!-- ===== ARQUITECTURA PROPUESTA ===== -->
+<h2 id="arq-propuesta">📡 ARQUITECTURA PROPUESTA — Plataforma Unificada SUPCON</h2>
+
+<div class="diagram-container">
+<h3><span style="width:10px;height:10px;background:var(--success);border-radius:50%;display:inline-block"></span> ECS-700 como SCADA central · G5Pro en retrofit · Orion RTU · SynchroTeq · Red OT Hirschmann</h3>
+<svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="620" fill="#f8fafc" rx="8"/>
+  <rect x="250" y="15" width="500" height="50" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="500" y="37" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">🖥️ PUNTA ARENAS — Centro de Control Remoto</text>
+  <text x="500" y="54" text-anchor="middle" font-size="8" fill="#3b82f6">Cliente ECS-700 · Operación completa de la Central</text>
+  
+  <line x1="500" y1="65" x2="500" y2="105" stroke="#3b82f6" stroke-width="3"/>
+  <ellipse cx="500" cy="120" rx="70" ry="20" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="500" y="120" text-anchor="middle" font-size="8" fill="#1e40af">MPLS + 4G Backup</text>
+  <line x1="500" y1="140" x2="500" y2="175" stroke="#3b82f6" stroke-width="3"/>
+  
+  <rect x="80" y="180" width="840" height="420" rx="10" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
+  <text x="500" y="203" text-anchor="middle" font-size="12" fill="#1e3a8a" font-weight="700">CENTRAL PUERTO NATALES</text>
+  
+  <rect x="320" y="215" width="360" height="45" rx="8" fill="#1e3a8a"/>
+  <text x="500" y="235" text-anchor="middle" font-size="10" fill="#ffffff" font-weight="700">🔵 SUPCON ECS-700 — DCS + SCADA UNIFICADO</text>
+  <text x="500" y="252" text-anchor="middle" font-size="8" fill="#bfdbfe">Servidores redundantes · Históricos · Alarmas · Reportes</text>
+  
+  <line x1="500" y1="260" x2="500" y2="285" stroke="#2563eb" stroke-width="2"/>
+  <rect x="180" y="285" width="640" height="22" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="500" y="300" text-anchor="middle" font-size="8" fill="#1e40af">🔵 Belden/Hirschmann — Switches Red OT · Anillo redundante · Segmentación VLAN</text>
+  
+  <line x1="250" y1="307" x2="250" y2="330" stroke="#93c5fd" stroke-width="1.5"/>
+  <line x1="400" y1="307" x2="400" y2="330" stroke="#93c5fd" stroke-width="1.5"/>
+  <line x1="550" y1="307" x2="550" y2="330" stroke="#93c5fd" stroke-width="1.5"/>
+  <line x1="700" y1="307" x2="700" y2="330" stroke="#93c5fd" stroke-width="1.5"/>
+  
+  <rect x="120" y="330" width="180" height="75" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="210" y="350" text-anchor="middle" font-size="8" font-weight="700" fill="#10b981">UG 9, 11, 13, 15</text>
+  <text x="210" y="367" text-anchor="middle" font-size="7" fill="#64748b">Jenbacher · Centauro · Cat EMCP4</text>
+  <text x="210" y="382" text-anchor="middle" font-size="7" fill="#10b981">Modbus TCP → SCADA</text>
+  <text x="210" y="397" text-anchor="middle" font-size="7" fill="#2563eb">🔵 SynchroTeq sincronismo</text>
+  
+  <rect x="340" y="330" width="320" height="75" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="500" y="350" text-anchor="middle" font-size="8" font-weight="700" fill="#2563eb">UG 3, 4, 5, 6, 8, 10 — RETROFIT</text>
+  <text x="500" y="367" text-anchor="middle" font-size="7" fill="#64748b">Waukesha · Solar Saturno · Palmero · Cat EMCP2</text>
+  <text x="500" y="382" text-anchor="middle" font-size="7" fill="#2563eb">🔵 PLC SUPCON G5Pro + Ethernet + Modbus TCP</text>
+  <text x="500" y="397" text-anchor="middle" font-size="7" fill="#2563eb">🔵 SynchroTeq sincronismo point-on-wave</text>
+  
+  <rect x="700" y="330" width="180" height="75" rx="6" fill="#faf5ff" stroke="#c4b5fd"/>
+  <text x="790" y="350" text-anchor="middle" font-size="8" font-weight="700" fill="#7c3aed">PROTECCIONES + RTU</text>
+  <text x="790" y="367" text-anchor="middle" font-size="7" fill="#64748b">🔵 NovaTech Orion LX</text>
+  <text x="790" y="382" text-anchor="middle" font-size="7" fill="#7c3aed">IEC 61850 · Celdas motorizadas</text>
+  
+  <rect x="200" y="425" width="280" height="60" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="340" y="445" text-anchor="middle" font-size="8" font-weight="700" fill="#d97706">SISTEMAS AUXILIARES</text>
+  <text x="340" y="460" text-anchor="middle" font-size="7" fill="#64748b">Bombas motorizadas · Válvulas automáticas · 🔵 CXT</text>
+  <text x="340" y="477" text-anchor="middle" font-size="7" fill="#10b981">✅ Control remoto desde SCADA</text>
+  
+  <rect x="520" y="425" width="200" height="60" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="620" y="445" text-anchor="middle" font-size="8" font-weight="700" fill="#d97706">GAS + DIÉSEL</text>
+  <text x="620" y="460" text-anchor="middle" font-size="7" fill="#64748b">Medidores Modbus · Nivel CXT</text>
+  <text x="620" y="477" text-anchor="middle" font-size="7" fill="#10b981">✅ Automatizado</text>
+  
+  <rect x="150" y="505" width="700" height="35" rx="6" fill="#f1f5f9"/>
+  <text x="500" y="525" text-anchor="middle" font-size="8" fill="#1e293b">🔵 SUPCON (DCS+PLC+Instrum.) · 🔵 NovaTech (RTU+IEC 61850) · 🔵 Vizimax (Sincronismo) · 🔵 Belden (Red OT) · 🔵 CONECTA (Ingeniería)</text>
+</svg>
+</div>
+
+<!-- ===== FLUJO REMOTO ===== -->
+<h2 id="flujo">📡 FLUJO DE CONTROL REMOTO — Punta Arenas → Puerto Natales</h2>
+
+<div class="diagram-container">
+<h3><span style="width:10px;height:10px;background:var(--success);border-radius:50%;display:inline-block"></span> Secuencia completa de operación remota en menos de 2 minutos</h3>
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="300" fill="#f8fafc" rx="8"/>
+  
+  <rect x="20" y="20" width="180" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+  <circle cx="110" cy="48" r="14" fill="#3b82f6"/><text x="110" y="53" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">1</text>
+  <text x="110" y="78" text-anchor="middle" font-size="9" font-weight="700" fill="#1e40af">Operador P. Arenas</text>
+  <text x="110" y="95" text-anchor="middle" font-size="7" fill="#64748b">Inicia secuencia arranque</text>
+  <text x="110" y="110" text-anchor="middle" font-size="7" fill="#64748b">desde cliente ECS-700</text>
+  
+  <line x1="200" y1="80" x2="235" y2="80" stroke="#3b82f6" stroke-width="2" marker-end="url(#a)"/>
+  
+  <rect x="240" y="20" width="180" height="120" rx="8" fill="#eff6ff" stroke="#93c5fd"/>
+  <circle cx="330" cy="48" r="14" fill="#2563eb"/><text x="330" y="53" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">2</text>
+  <text x="330" y="78" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">SCADA ECS-700</text>
+  <text x="330" y="95" text-anchor="middle" font-size="7" fill="#64748b">Procesa orden · Verifica</text>
+  <text x="330" y="110" text-anchor="middle" font-size="7" fill="#64748b">disponibilidad de UG</text>
+  
+  <line x1="420" y1="80" x2="455" y2="80" stroke="#2563eb" stroke-width="2" marker-end="url(#b)"/>
+  
+  <rect x="460" y="20" width="180" height="120" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <circle cx="550" cy="48" r="14" fill="#10b981"/><text x="550" y="53" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">3</text>
+  <text x="550" y="78" text-anchor="middle" font-size="9" font-weight="700" fill="#10b981">PLC G5Pro / IEDs</text>
+  <text x="550" y="95" text-anchor="middle" font-size="7" fill="#64748b">Ejecutan arranque UG</text>
+  <text x="550" y="110" text-anchor="middle" font-size="7" fill="#64748b">Sincronismo automático</text>
+  
+  <line x1="640" y1="80" x2="675" y2="80" stroke="#10b981" stroke-width="2" marker-end="url(#c)"/>
+  
+  <rect x="680" y="20" width="200" height="120" rx="8" fill="#f0fdf4" stroke="#86efac"/>
+  <circle cx="780" cy="48" r="14" fill="#10b981"/><text x="780" y="53" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">4</text>
+  <text x="780" y="78" text-anchor="middle" font-size="9" font-weight="700" fill="#10b981">UG en servicio</text>
+  <text x="780" y="95" text-anchor="middle" font-size="7" fill="#64748b">Potencia entregada</text>
+  <text x="780" y="110" text-anchor="middle" font-size="7" fill="#64748b">Telemetría en vivo</text>
+  
+  <line x1="780" y1="140" x2="780" y2="185" stroke="#10b981" stroke-width="1.5"/>
+  <line x1="780" y1="185" x2="110" y2="185" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="110" y1="185" x2="110" y2="140" stroke="#64748b" stroke-width="1.5" marker-end="url(#d)"/>
+  <text x="445" y="200" text-anchor="middle" font-size="7" fill="#64748b">🔄 Telemetría: presión, temperatura, vibración, tensión, corriente · Históricos · Alarmas</text>
+  
+  <rect x="20" y="220" width="860" height="45" rx="6" fill="#f1f5f9"/>
+  <text x="450" y="238" text-anchor="middle" font-size="8" fill="#1e293b">Tiempo total: &lt; 2 min · Sin intervención manual · VPN + Firewall OT + Segmentación VLAN</text>
+  <text x="450" y="255" text-anchor="middle" font-size="7" fill="#64748b">Protocolos: Modbus TCP · DNP3 · IEC 61850 · SNMP · NTP sincronizado</text>
+  
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#3b82f6"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/></marker>
+    <marker id="c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#10b981"/></marker>
+    <marker id="d" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10,0 L0,5 L10,10 Z" fill="#64748b"/></marker>
+  </defs>
+</svg>
+</div>
+
+<!-- ===== METODOLOGÍA ===== -->
+<h2 id="metodologia">📐 METODOLOGÍA DE IMPLEMENTACIÓN</h2>
+
+<div class="section"><h3>FASE 1 — Ingeniería de Detalle (Semanas 1-4)</h3>
+<div class="method-step"><div class="step-num">1</div><div class="step-content"><h4>Levantamiento en Terreno <span style="font-size:.65rem;color:var(--muted)">[Fuente: Informe pp.4-34, Parte 1]</span></h4><p>Validación in situ de cada UG. Cableado existente, espacio en tableros, ductos. Documentación fotográfica y planos As-Built preliminares.</p></div></div>
+<div class="method-step"><div class="step-num">2</div><div class="step-content"><h4>Ingeniería de Señales</h4><p>Definición de I/O por UG (analógicas, digitales, alarmas). Protocolos: Modbus TCP (UG modernas), cableado físico (UG retrofiteadas).</p></div></div>
+<div class="method-step"><div class="step-num">3</div><div class="step-content"><h4>Diseño de Arquitectura SCADA</h4><p>Topología red OT con switches Hirschmann. Anillo redundante. VLAN por subsistema. Servidores ECS-700 redundantes. Ciberseguridad perimetral.</p></div></div>
+</div>
+
+<div class="section"><h3>FASE 2 — Implementación (Semanas 5-12)</h3>
+<div class="method-step"><div class="step-num">4</div><div class="step-content"><h4>Retrofit Unidades Antiguas <span style="font-size:.65rem;color:var(--muted)">[Informe p.37: "instalación de PLC industriales con módulos de comunicación Ethernet"]</span></h4><p>Desmontaje de lógica cableada en UG 3,4,5,6,8,10. Instalación de PLC SUPCON G5Pro. Cableado de señales. Configuración de lazos de control.</p></div></div>
+<div class="method-step"><div class="step-num">5</div><div class="step-content"><h4>Automatización de Auxiliares <span style="font-size:.65rem;color:var(--muted)">[Informe p.38: "Automatizar bombas y válvulas para permitir control remoto"]</span></h4><p>Motorización de válvulas diésel. Transmisores CXT para presión, temperatura, nivel. Programación de secuencias de partida/parada.</p></div></div>
+<div class="method-step"><div class="step-num">6</div><div class="step-content"><h4>Integración Unidades Modernas <span style="font-size:.65rem;color:var(--muted)">[Informe p.37: "Integración de unidades modernas mediante protocolos nativos"]</span></h4><p>Conexión de UG 9,11,13,15 al SCADA. Configuración de drivers Modbus TCP/DNP3 en ECS-700. Pruebas de lectura/escritura.</p></div></div>
+</div>
+
+<div class="section"><h3>FASE 3 — Comisionamiento (Semanas 13-16)</h3>
+<div class="method-step"><div class="step-num">7</div><div class="step-content"><h4>Pruebas FAT</h4><p>Simulación completa del sistema en laboratorio. Validación de todas las señales, alarmas y secuencias.</p></div></div>
+<div class="method-step"><div class="step-num">8</div><div class="step-content"><h4>Pruebas SAT y Puesta en Marcha <span style="font-size:.65rem;color:var(--muted)">[Informe p.38-39: Fases 3 y 4 del proyecto]</span></h4><p>Comisionamiento en Central Puerto Natales. Arranque controlado de cada UG. Pruebas de operación remota desde Punta Arenas.</p></div></div>
+<div class="method-step"><div class="step-num">9</div><div class="step-content"><h4>Capacitación y Cierre</h4><p>Entrenamiento a operadores en Punta Arenas. Documentación As-Built. Manual de operación y mantenimiento. Protocolos de ciberseguridad.</p></div></div>
+</div>
+
+<!-- ===== ANEXO TÉCNICO ===== -->
+<h2 id="anexo">📎 ANEXO TÉCNICO — Equipos y Ventajas Competitivas</h2>
+
+<div class="section">
+<h3>1. DCS + SCADA: SUPCON ECS-700 vs Siemens SIMATIC PCS 7</h3>
+<table>
+<tr><th>Característica</th><th>🔵 SUPCON ECS-700</th><th>Siemens PCS 7</th></tr>
+<tr class="win"><td>Market share</td><td>#1 China (19.2%), 30,000+ instalaciones</td><td>#2 global, fuerte en Europa</td></tr>
+<tr class="win"><td>Redundancia</td><td>Controlador + I/O + comunicación. Hot-swap</td><td>Redundante con CPU 410-5H (solo controlador)</td></tr>
+<tr class="win"><td>Aislamiento</td><td>Canal-canal aislado (todos los módulos)</td><td>Aislamiento por grupo</td></tr>
+<tr class="win"><td>Ambiente</td><td>G3 (IEC 60721-3-3) — ambientes hostiles</td><td>G1-G2 estándar</td></tr>
+<tr class="win"><td>Ciberseguridad</td><td>IEC 62443-4-1/2 SL1 + Achilles certificado</td><td>IEC 62443 básico</td></tr>
+<tr class="win"><td>Desplazamientos</td><td>60+ casos documentados (Yokogawa, Honeywell, Bailey)</td><td>Migraciones complejas</td></tr>
+</table>
+<div class="highlight"><strong>Conclusión:</strong> ECS-700 supera a Siemens PCS 7 en redundancia total (I/O incluida), resistencia ambiental G3 (crítico para Magallanes — salitre y humedad extremos), y certificación de ciberseguridad por terceros (Achilles).</div>
+</div>
+
+<div class="section">
+<h3>2. PLC Retrofit: SUPCON G5Pro vs Allen-Bradley ControlLogix</h3>
+<table>
+<tr><th>Característica</th><th>🔵 SUPCON G5Pro</th><th>Allen-Bradley ControlLogix</th></tr>
+<tr class="win"><td>Integración DCS</td><td>Nativo con ECS-700 (mismo software)</td><td>Requiere gateway第三方 u OPC</td></tr>
+<tr class="win"><td>Protocolos</td><td>Modbus TCP, DNP3, IEC 61850 nativos</td><td>EtherNet/IP propietario (+ módulos extra)</td></tr>
+<tr class="win"><td>Ambiente</td><td>G3 anticorrosión, -20 a 70°C</td><td>0 a 60°C estándar</td></tr>
+<tr class="win"><td>Software</td><td>IEC 61131-3 (5 lenguajes). Sin licencia anual</td><td>RSLogix 5000 con licencia anual renovable</td></tr>
+</table>
+<div class="highlight"><strong>Nota:</strong> En Puerto Natales hay PLCs Allen-Bradley existentes (UG 6, 8, 13) que demostraron ser parciales. Solo ejecutan funciones específicas y no controlan todos los procesos de la UG.</div>
+</div>
+
+<div class="section">
+<h3>3. Instrumentación: SUPCON CXT vs Emerson Rosemount 3051S</h3>
+<table>
+<tr><th>Característica</th><th>🔵 SUPCON CXT</th><th>Emerson Rosemount 3051S</th></tr>
+<tr class="win"><td>Precisión</td><td>±0.035% (CJT)</td><td>±0.04%</td></tr>
+<tr class="win"><td>Estabilidad</td><td>±0.15% / 10 años</td><td>±0.15% / 10 años</td></tr>
+<tr class="win"><td>Protocolo</td><td>HART 7 + Modbus + Bluetooth integrado</td><td>HART 7</td></tr>
+<tr class="win"><td>Disponibilidad Chile</td><td>Stock local vía CONECTA</td><td>Importación 4-6 semanas</td></tr>
+</table>
+<div class="highlight"><strong>Conclusión:</strong> CXT ofrece mayor precisión (±0.035%) y agrega comunicación Modbus nativa sin conversores adicionales. Disponibilidad inmediata en Chile.</div>
+</div>
+
+<div class="section">
+<h3>4. RTU + IEC 61850: NovaTech Orion LX vs Siemens SICAM A8000</h3>
+<table>
+<tr><th>Característica</th><th>🔵 NovaTech Orion LX</th><th>Siemens SICAM A8000</th></tr>
+<tr class="win"><td>Funciones</td><td>RTU + Gateway IEC 61850 + Controlador lógico</td><td>RTU dedicada (necesita PLC aparte)</td></tr>
+<tr class="win"><td>Protocolos</td><td>IEC 61850 Cliente/Servidor + DNP3 + Modbus + IEC 60870</td><td>IEC 61850 + IEC 60870-5</td></tr>
+<tr class="win"><td>Instalado Chile</td><td>#1 base instalada PMU + sincrofasores</td><td>Presente pero menor cuota</td></tr>
+<tr class="win"><td>Integración</td><td>Compatible con cualquier DCS (sin vendor lock-in)</td><td>Optimizado para SICAM PAS</td></tr>
+</table>
+<div class="highlight"><strong>Conclusión:</strong> Orion LX reemplaza 3 equipos en 1. Permite migrar protecciones Micom P141 a IEC 61850 sin cambiar todo el esquema de protecciones existente.</div>
+</div>
+
+<div class="section">
+<h3>5. Sincronismo: Vizimax SynchroTeq vs Beckwith M-3410A</h3>
+<table>
+<tr><th>Característica</th><th>🔵 Vizimax SynchroTeq</th><th>Beckwith M-3410A</th></tr>
+<tr class="win"><td>Tecnología</td><td>Point-on-Wave (cierre en ángulo exacto)</td><td>Sincronismo convencional</td></tr>
+<tr class="win"><td>Desgaste mecánico</td><td>Reduce estrés en contactos del interruptor</td><td>Cierre convencional</td></tr>
+<tr class="win"><td>Aplicación</td><td>Turbinas + motores + reconectadores</td><td>Principalmente turbinas</td></tr>
+<tr class="win"><td>Comunicación</td><td>IEC 61850 + DNP3 nativos</td><td>DNP3</td></tr>
+</table>
+<div class="highlight"><strong>Conclusión:</strong> SynchroTeq es la única solución point-on-wave en el mercado de partners CONECTA. Para 11 UG con distintas tecnologías y antigüedad, la precisión de cierre es crítica para evitar disparos y extender vida útil.</div>
+</div>
+
+<div class="section">
+<h3>6. Red OT: Belden/Hirschmann vs Cisco Industrial Ethernet</h3>
+<table>
+<tr><th>Característica</th><th>🔵 Hirschmann (Belden)</th><th>Cisco IE 4000</th></tr>
+<tr class="win"><td>Diseño</td><td>Diseñado para subestaciones IEC 61850</td><td>IT estándar adaptado a OT</td></tr>
+<tr class="win"><td>Redundancia</td><td>HIPER-Ring (recuperación &lt; 10ms)</td><td>REP (recuperación 50ms+)</td></tr>
+<tr class="win"><td>Temperatura</td><td>-40 a 85°C (sin ventilación)</td><td>-34 a 74°C</td></tr>
+<tr class="win"><td>MTBF</td><td>&gt; 100 años (comprobado en campo)</td><td>~50 años</td></tr>
+</table>
+<div class="highlight"><strong>Conclusión:</strong> Hirschmann es el estándar de facto en subestaciones chilenas. HIPER-Ring garantiza que la red se recupera en milisegundos. Para Puerto Natales, la temperatura de operación de -40°C es indispensable en invierno magallánico.</div>
+</div>
+
+<h2>🔧 STACK TECNOLÓGICO — Partners CONECTA</h2>
+<div class="partner-grid">
+<div class="partner-card"><div class="name">SUPCON ECS-700</div><div class="role">DCS + SCADA</div></div>
+<div class="partner-card"><div class="name">SUPCON G5Pro</div><div class="role">PLC Retrofit</div></div>
+<div class="partner-card"><div class="name">SUPCON CXT</div><div class="role">Instrumentación</div></div>
+<div class="partner-card"><div class="name">NovaTech Orion LX</div><div class="role">RTU + IEC 61850</div></div>
+<div class="partner-card"><div class="name">Vizimax SynchroTeq</div><div class="role">Sincronismo</div></div>
+<div class="partner-card"><div class="name">Belden/Hirschmann</div><div class="role">Red OT</div></div>
+<div class="partner-card"><div class="name">CONECTA</div><div class="role">Ingeniería</div></div>
+</div>
+
+<div class="section" style="margin-top:2rem"><h3>📄 Referencias del Documento Original</h3><p style="font-size:.78rem;color:var(--muted)">Todas las observaciones técnicas, estados de equipos y recomendaciones de automatización citadas en este documento provienen del informe "Levantamiento e Ingeniería Conceptual Automatización Central Puerto Natales" (40 páginas, julio 2025). Las citas [p.X] remiten a páginas específicas de dicho informe. Los diagramas de arquitectura y la selección de equipos son propuesta de CONECTA Ingeniería basada en los hallazgos del levantamiento.</p></div>
+<footer>CONECTA Ingeniería S.A. · Central Puerto Natales · Julio 2026 · Documento técnico preliminar</footer>
+</div></body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Central Puerto Natales — Propuesta Automatización | CONECTA</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--accent:#2563eb;--text:#1e293b;--muted:#64748b;--success:#10b981;--warn:#d97706;--red:#ef4444;--radius:12px}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:14px;line-height:1.7}.container{max-width:1000px;margin:0 auto;padding:1.5rem}h1{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:800;color:var(--accent)}h2{font-family:'Outfit',sans-serif;font-size:1.1rem;color:var(--accent);margin:2rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px solid var(--border)}h3{font-family:'Outfit',sans-serif;font-size:.95rem;margin:1rem 0 .5rem}.sub{color:var(--muted);font-size:.82rem;margin-bottom:1.5rem}.hero{background:linear-gradient(135deg,#071324,#1e3a8a);color:#fff;border-radius:var(--radius);padding:2rem;text-align:center;margin-bottom:1.5rem}.hero h1{color:#fff;font-size:1.8rem}.hero p{opacity:.8;font-size:.9rem;margin-top:.5rem}.stats{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin:1rem 0}.stat{text-align:center;padding:.6rem 1.2rem;background:rgba(255,255,255,.1);border-radius:8px;color:#fff}.stat-n{font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700}.stat-l{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;opacity:.7}table{width:100%;border-collapse:collapse;font-size:.78rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin:.75rem 0}th{text-align:left;padding:.4rem .6rem;background:#f1f5f9;font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}td{padding:.4rem .6rem;border-bottom:1px solid var(--border)}.badge{display:inline-block;padding:.12rem .4rem;border-radius:100px;font-size:.6rem;font-weight:700}.b-red{background:#fef2f2;color:var(--red)}.b-orange{background:#fff7ed;color:var(--warn)}.b-green{background:#f0fdf4;color:var(--success)}.b-blue{background:#eff6ff;color:var(--accent)}.phase{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;margin:.7rem 0}.phase h3{color:var(--accent);margin-bottom:.3rem}.phase .meta{font-size:.72rem;color:var(--muted);margin-bottom:.3rem}.solution-box{background:rgba(37,99,235,.03);border:1px solid rgba(37,99,235,.1);border-radius:var(--radius);padding:1rem;margin:1.5rem 0}.solution-box h3{color:var(--accent)}.partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:1rem 0}.partner-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.8rem;text-align:center}.partner-card .name{font-weight:700;font-size:.8rem}.partner-card .role{font-size:.65rem;color:var(--muted);margin-top:.2rem}footer{text-align:center;padding:2rem;color:var(--muted);font-size:.68rem}@media(max-width:600px){{.stats{flex-direction:column}}}</style></head><body><div class="container">
+
+<div class="hero">
+<h1>⚡ Central Puerto Natales</h1>
+<p>Levantamiento e Ingeniería Conceptual para Automatización y Control Remoto</p>
+<div class="stats">
+<div class="stat"><div class="stat-n">11</div><div class="stat-l">Unidades Generadoras</div></div>
+<div class="stat"><div class="stat-n">16 MW</div><div class="stat-l">Potencia Nominal</div></div>
+<div class="stat"><div class="stat-n">6</div><div class="stat-l">Necesitan Retrofit</div></div>
+<div class="stat"><div class="stat-n">253 km</div><div class="stat-l">Control Remoto (P. Arenas)</div></div>
+</div>
+</div>
+
+<h2>🔍 DIAGNÓSTICO POR UNIDAD</h2>
+<table>
+<tr><th>UG</th><th>Tecnología</th><th>Potencia</th><th>Año</th><th>Control</th><th>Estado</th><th>Qué necesita</th></tr>
+<tr><td>UG 3</td><td>Waukesha Gas</td><td>1.18 MW</td><td>2001</td><td><span class="badge b-red">Relés</span></td><td>Limitada 620kW</td><td>PLC + módulo comunicación</td></tr>
+<tr><td>UG 4</td><td>Solar Saturno Dual</td><td>0.8 MW</td><td>1976</td><td><span class="badge b-red">Relés</span></td><td>Sin diésel</td><td>PLC + módulo comunicación</td></tr>
+<tr><td>UG 5</td><td>Solar Saturno Dual</td><td>0.8 MW</td><td>1976</td><td><span class="badge b-red">Relés</span></td><td>Sin diésel</td><td>PLC + módulo comunicación</td></tr>
+<tr><td>UG 6</td><td>Caterpillar Diésel BF</td><td>1.5 MW</td><td>1997</td><td><span class="badge b-orange">PLC parcial</span></td><td>Sin bi-fuel</td><td>PLC completo + SCADA</td></tr>
+<tr><td>UG 8</td><td>Waukesha Gas</td><td>1.18 MW</td><td>1991</td><td><span class="badge b-red">Relés</span></td><td>Limitada 620kW</td><td>PLC + módulo comunicación</td></tr>
+<tr><td>UG 9</td><td>Jenbacher Gas</td><td>1.42 MW</td><td>2007</td><td><span class="badge b-green">PC Industrial</span></td><td>OK</td><td>Integrar al SCADA</td></tr>
+<tr><td>UG 10</td><td>Palmero Diésel</td><td>1.36 MW</td><td>2007</td><td><span class="badge b-red">Relés</span></td><td>Limitada 600kW</td><td>PLC + módulo comunicación</td></tr>
+<tr><td>UG 11</td><td>Jenbacher Gas</td><td>1.42 MW</td><td>2012</td><td><span class="badge b-green">PC Industrial</span></td><td>OK</td><td>Integrar al SCADA</td></tr>
+<tr><td>UG 12</td><td>Caterpillar Diésel BF</td><td>1.4 MW</td><td>2002</td><td><span class="badge b-orange">EMCP-2</span></td><td>OK</td><td>Gateway comunicación</td></tr>
+<tr><td>UG 13</td><td>Solar Centauro Dual</td><td>4.5 MW</td><td>2015</td><td><span class="badge b-green">PLC AB 1200</span></td><td>OK</td><td>Integrar al SCADA</td></tr>
+<tr><td>UG 15</td><td>Caterpillar Gas</td><td>1.9 MW</td><td>2020</td><td><span class="badge b-green">EMCP 4.3</span></td><td>OK</td><td>Integrar al SCADA</td></tr>
+</table>
+
+<h2>⚠️ SISTEMAS AUXILIARES — TODO MANUAL</h2>
+<table>
+<tr><th>Sistema</th><th>Estado actual</th><th>Acción requerida</th></tr>
+<tr><td>Recepción diésel</td><td>Válvulas manuales + bombas manuales</td><td>Válvulas motorizadas + PLC + SCADA</td></tr>
+<tr><td>Distribución diésel</td><td>3 estanques (150K + 30K + 3K litros)</td><td>Medición nivel automatizada</td></tr>
+<tr><td>Sala de bombas diésel</td><td>Arranque manual por botonera</td><td>Arranque remoto por SCADA</td></tr>
+<tr><td>Batería de gas</td><td>Medidores locales (UG15 sin medidor)</td><td>Medidores con comunicación Modbus</td></tr>
+<tr><td>Refrigeración</td><td>Interruptor manual partida/parada</td><td>Control automático por temperatura</td></tr>
+<tr><td>Protecciones</td><td>Relés Micom P141 obsoletos</td><td>IEC 61850 modernos</td></tr>
+<tr><td>Interruptores</td><td>Isodel Sprecher antiguos</td><td>Celdas motorizadas modernas</td></tr>
+<tr><td>Respaldo energía</td><td>UPS 3KVA (nov 2025)</td><td>OK</td></tr>
+</table>
+
+<h2>📡 SCADA ACTUAL — DOS SISTEMAS SEPARADOS</h2>
+<div class="phase">
+<h3>SCADA 1 — Monitoreo (sin control)</h3>
+<div class="meta">Monitorea UG, cabecera alimentadores, batería gas, estanque diésel</div>
+<p style="font-size:.78rem">❌ No permite controlar NINGÚN equipo. Solo visualización.</p>
+</div>
+<div class="phase">
+<h3>SCADA 2 — Distribución</h3>
+<div class="meta">Controla reconectadores, desconectadores y motor Cerro Castillo</div>
+<p style="font-size:.78rem">✅ Permite control remoto de red de distribución y partida de motor de respaldo.</p>
+</div>
+<p style="font-size:.78rem;color:var(--muted)">⚠️ Los dos SCADAs NO están integrados entre sí. No hay plataforma unificada.</p>
+
+<h2>🔧 SOLUCIÓN PROPUESTA — 100% Partners CONECTA</h2>
+
+<div class="partner-grid">
+<div class="partner-card"><div class="name">🔵 SUPCON ECS-700</div><div class="role">DCS + SCADA unificado</div></div>
+<div class="partner-card"><div class="name">🔵 SUPCON G5Pro</div><div class="role">PLC retrofit 6 unidades</div></div>
+<div class="partner-card"><div class="name">🔵 SUPCON CXT</div><div class="role">Transmisores presión/temp/nivel</div></div>
+<div class="partner-card"><div class="name">🔵 NovaTech Orion LX</div><div class="role">RTU + IEC 61850 gateway</div></div>
+<div class="partner-card"><div class="name">🔵 Vizimax SynchroTeq</div><div class="role">Sincronismo point-on-wave</div></div>
+<div class="partner-card"><div class="name">🔵 Belden/Hirschmann</div><div class="role">Switches red OT + MPLS</div></div>
+</div>
+
+<h2>📋 PLAN DE IMPLEMENTACIÓN (4 FASES)</h2>
+
+<div class="phase">
+<h3>FASE 1 — Integración de Unidades Modernas</h3>
+<div class="meta">Duración: 2 meses | Unidades: UG 9, 11, 13, 15</div>
+<p style="font-size:.78rem">Conectar Jenbacher, Centauro y Cat EMCP al SCADA mediante protocolos nativos (Modbus TCP, DNP3). Implementar plataforma ECS-700 como SCADA central unificado que absorba los 2 SCADAs existentes.</p>
+</div>
+
+<div class="phase">
+<h3>FASE 2 — Retrofit Unidades Antiguas</h3>
+<div class="meta">Duración: 3 meses | Unidades: UG 3, 4, 5, 6, 8, 10</div>
+<p style="font-size:.78rem">Instalar <strong>PLC SUPCON G5Pro</strong> + módulos Ethernet en cada unidad. Reemplazar lógica cableada por control digital. Agregar <strong>Vizimax SynchroTeq</strong> para sincronismo automático. Cableado de señales de campo a cada PLC.</p>
+</div>
+
+<div class="phase">
+<h3>FASE 3 — Automatización de Auxiliares</h3>
+<div class="meta">Duración: 2 meses</div>
+<p style="font-size:.78rem">Motorizar válvulas de recepción/distribución diésel. Automatizar bombas con arranque remoto SCADA. Instalar <strong>transmisores SUPCON CXT</strong> para presión, temperatura, nivel en estanques. Medidores de gas con Modbus. Reemplazar relés Micom P141 por IEC 61850 usando <strong>NovaTech Orion LX</strong> como gateway. Cambiar interruptores Isodel Sprecher por celdas motorizadas.</p>
+</div>
+
+<div class="phase">
+<h3>FASE 4 — Optimización y Remoto</h3>
+<div class="meta">Duración: 1.5 meses</div>
+<p style="font-size:.78rem">Implementar despacho automático según demanda. Secuencias de arranque/parada programadas. Alarmas inteligentes con reportabilidad. Acceso remoto seguro desde Punta Arenas sobre MPLS Entel. <strong>Switches Belden/Hirschmann</strong> para segmentación red OT. Ciberseguridad perimetral. Pruebas de operación remota y capacitación a operadores.</p>
+</div>
+
+<h2>💰 RESUMEN COMERCIAL</h2>
+
+<div class="solution-box">
+<table>
+<tr><th>Concepto</th><th>Producto</th><th>Partner</th><th>Estimado</th></tr>
+<tr><td>DCS + SCADA</td><td>ECS-700</td><td>SUPCON</td><td>$80-150K</td></tr>
+<tr><td>6 PLC retrofit</td><td>G5Pro</td><td>SUPCON</td><td>$60-100K</td></tr>
+<tr><td>Instrumentación</td><td>CXT + válvulas</td><td>SUPCON</td><td>$40-80K</td></tr>
+<tr><td>RTU + protección</td><td>Orion LX</td><td>NovaTech</td><td>$30-50K</td></tr>
+<tr><td>Sincronismo</td><td>SynchroTeq</td><td>Vizimax</td><td>$25-40K</td></tr>
+<tr><td>Red OT + switches</td><td>Hirschmann</td><td>Belden</td><td>$20-35K</td></tr>
+<tr><td>Ingeniería + puesta en marcha</td><td>—</td><td>CONECTA</td><td>$100-200K</td></tr>
+<tr style="font-weight:700;background:#f8fafc"><td>TOTAL ESTIMADO</td><td></td><td></td><td>$355K - $655K USD</td></tr>
+</table>
+</div>
+
+<footer>CONECTA Ingeniería S.A. · Fuente: Levantamiento e Ingeniería Conceptual Central Puerto Natales · Julio 2026 · Propuesta preliminar</footer>
+</div></body></html>

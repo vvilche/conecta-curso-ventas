@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>M1 · El Abismo Técnico-Comercial | Academia CONECTA</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--card:#111827;--border:#1f2d45;--accent:#2563eb;--accent-hover:#3b82f6;--text:#e2e8f0;--muted:#64748b;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;--gold:#d97706;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.8;padding:0}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-family:'Outfit',sans-serif;font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:.3rem}
+.subtitle{text-align:center;color:var(--accent);margin-bottom:2rem;font-size:.95rem}
+.lesson{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;margin-bottom:1.25rem}
+.lesson h2{font-family:'Outfit',sans-serif;font-size:1.15rem;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.lesson h2 .n{background:var(--accent);color:#fff;min-width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0}
+.lesson p{margin-bottom:.8rem;font-size:.9rem}
+.lesson strong{color:var(--text)}
+.lesson em{color:var(--accent);font-style:normal;font-weight:600}
+.case-box{background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-left:4px solid var(--gold);padding:1rem 1.25rem;border-radius:0 var(--radius) var(--radius) 0;margin:1rem 0}
+.case-box h4{color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;font-family:'IBM Plex Mono',monospace}
+.insight-box{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.15);border-left:4px solid var(--accent);padding:1rem 1.25rem;border-radius:0 var(--radius) var(--radius) 0;margin:1rem 0}
+.insight-box h4{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem;font-family:'IBM Plex Mono',monospace}
+table{width:100%;border-collapse:collapse;margin:.75rem 0;font-size:.82rem}
+th{text-align:left;padding:.5rem .7rem;background:rgba(37,99,235,.06);color:var(--accent);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+td{padding:.5rem .7rem;border-bottom:1px solid var(--border)}tr:last-child td{border-bottom:none}
+.exercise{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.15);border-radius:var(--radius);padding:1.25rem;margin:1rem 0}
+.exercise h4{color:var(--success);font-size:.85rem;margin-bottom:.6rem}
+.exercise textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:.8rem;font-family:'Inter',sans-serif;font-size:.85rem;resize:vertical;min-height:60px}
+.exercise textarea:focus{outline:none;border-color:var(--success)}
+.question{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:.6rem}
+.question h4{margin-bottom:.6rem;font-size:.88rem}
+.option{display:block;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;margin-bottom:.3rem;cursor:pointer;transition:all .2s;font-size:.82rem}
+.option:hover{border-color:var(--accent)}.option input{margin-right:.6rem;accent-color:var(--accent)}
+.option.correct{border-color:var(--success);background:rgba(16,185,129,.06)}.option.wrong{border-color:var(--danger);background:rgba(239,68,68,.06)}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.5rem;border-radius:100px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--accent)}
+.result{text-align:center;padding:1.25rem;border-radius:var(--radius);margin-top:1rem;display:none}
+.result.pass{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);display:block}
+.result.fail{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);display:block}
+.result h3{font-family:'Outfit',sans-serif;font-size:1.2rem;margin-bottom:.2rem}
+.result.pass h3{color:var(--success)}.result.fail h3{color:var(--danger)}
+.result p{font-size:.8rem;color:var(--muted)}
+@media(max-width:600px){.container{padding:1rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🧠 Módulo 1 — El Abismo Técnico-Comercial</h1>
+<p class="subtitle">Por qué los técnicos pierden ventas · 7 lecciones · Test: 10 preguntas</p>
+
+<article class="lesson">
+<h2><span class="n">1</span> El problema: hablás specs, ellos escuchan miedos</h2>
+<p>Toda tu formación — técnica, eléctrica, instrumentista — te enseñó a pensar en <em>especificaciones</em>. Voltajes. Tolerancias. Protocolos. Es tu idioma nativo.</p>
+<p>Pero cuando entrás a la oficina de un Gerente de Planta, su cerebro no procesa specs. Procesa <em>amenazas</em>. Cada especificación que mencionás, su cerebro la traduce: "¿Qué puede salir mal con esto? ¿A quién llamo si falla? ¿Cuánto me va a costar explicárselo a mi jefe?"</p>
+<p>Este es el <em>abismo técnico-comercial</em>: vos hablás en idioma ingeniería. Él escucha en idioma supervivencia profesional.</p>
+<div class="insight-box"><h4>💡 Principio Fundamental</h4><p>Tu comprador no compra specs. Compra la eliminación de un miedo. La especificación solo le importa en la medida en que responde a: <em>"¿Esto evita que me despidan?"</em></p></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">2</span> Caso Real — Agrosuper (2024)</h2>
+<p>CONECTA fue llamado para cotizar sensores de temperatura en cámaras de frío de Agrosuper. El ingeniero de planta preguntó por especificaciones del sensor.</p>
+<div class="case-box">
+<h4>📋 Respuesta tradicional (fracaso garantizado)</h4>
+<p>"Nuestro sensor PT100 tiene precisión de ±0.15°C, tiempo de respuesta de 0.5 segundos, salida 4-20mA con protocolo HART y certificación IP67."</p>
+</div>
+<div class="case-box">
+<h4>📋 Respuesta CONECTA (cierre de venta)</h4>
+<p>"Antes de hablar de sensores, una pregunta: <em>¿cuánto vale la merma de producto si una cámara de frío falla un viernes a la noche y nadie se entera hasta el lunes?</em>"</p>
+<p>Respuesta: <strong>$4.2 millones por lote.</strong></p>
+<p>Esa cifra se convirtió en el ancla de toda la negociación. Ya no se hablaba de sensores. Se hablaba de <em>proteger $4.2M de producto perecible</em>. El sensor pasó de ser un gasto a ser un seguro.</p>
+</div>
+<div class="insight-box"><h4>💡 Lección</h4><p>No vendas el termómetro. Vende la tranquilidad de que el gerente no va a recibir una llamada el domingo a las 3am porque se echaron a perder 40 toneladas de pollos. <em>El dolor económico siempre es más persuasivo que cualquier especificación técnica.</em></p></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">3</span> Caso Real — Transelec (2025)</h2>
+<p>Transelec necesitaba PMUs para cumplir con la nueva normativa CEN en subestaciones de alta montaña. El desafío no era técnico — era logístico y humano.</p>
+<div class="case-box">
+<h4>📋 Diagnóstico de dolor oculto</h4>
+<p>La pregunta no era "¿qué PMU necesitan?". Era: <em>"¿Qué pasa si nieva y no pueden llegar a la subestación por 3 días? ¿Quién recibe la multa del CEN?"</em></p>
+<p>Respuesta: el Gerente de Operaciones. La multa: hasta $50M. El dolor real no era técnico — era que <em>él personalmente</em> iba a tener que explicarle al directorio por qué falló el cumplimiento normativo.</p>
+</div>
+<div class="insight-box"><h4>💡 Lección</h4><p>El dolor normativo (multa CEN, sanción SEC) es el más fácil de vender porque <em>ya existe</em>. No tenés que crear la necesidad. Solo tenés que mostrar que vos sos el que evita que esa multa caiga sobre <em>esa persona específica</em>.</p></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">4</span> Tu Vector de Diferenciación (Vd)</h2>
+<p>No basta con ser "mejor". Tenés que articular exactamente en qué sos distinto. El Vd son máximo 5 atributos <em>específicos y verificables</em> que solo vos ofrecés.</p>
+<table>
+<tr><th>Genérico (no vende)</th><th>Específico (vende)</th></tr>
+<tr><td>"Somos rápidos"</td><td>"Técnico en terreno en menos de 4 horas. Bases en Antofagasta, Calama y Santiago."</td></tr>
+<tr><td>"Tenemos certificaciones"</td><td>"SIL3 de fábrica. No es un upgrade que se paga aparte."</td></tr>
+<tr><td>"Soporte 24/7"</td><td>"Si tu planta para un viernes a las 8pm, nosotros atendemos. Emerson te manda a un chatbot."</td></tr>
+<tr><td>"Somos compatibles"</td><td>"Instalamos sobre tu DCS Honeywell sin parar la planta ni un minuto."</td></tr>
+<tr><td>"Ofrecemos garantía"</td><td>"Piloto 30 días sin costo. Si no ves resultados, no pagás. Sin letra chica."</td></tr>
+</table>
+<div class="exercise"><h4>🧪 Definí tu Vd</h4><p>Escribí 5 atributos ESPECÍFICOS que solo vos ofrecés. Nada genérico.</p><textarea placeholder="1. ...
+2. ...
+3. ...
+4. ...
+5. ..."></textarea></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">5</span> La Regla del 10% — Tu Zippo</h2>
+<p>En la Segunda Guerra Mundial, el encendedor Zippo no era el más barato, ni el más eficiente. Pero tenía UNA cosa que ningún otro tenía: se encendía con una sola mano, con viento, bajo la lluvia, en una trinchera. Ese 10% de diferencia lo convirtió en objeto de culto.</p>
+<div class="case-box">
+<h4>📋 El Zippo de CONECTA</h4>
+<p>No es el precio. No es la marca SUPCON. Es: <em>"Ingeniería chilena que atiende el teléfono. Si tu planta para un viernes a las 8pm, hablás con un ingeniero, no con un chatbot en inglés."</em></p>
+</div>
+<div class="exercise"><h4>🧪 Encontrá tu Zippo</h4><p>¿Cuál es el 10% de tu servicio que NADIE más puede ofrecer igual? Una frase.</p><textarea placeholder="Mi Zippo: ..."></textarea></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">6</span> CNV — Comunicación No Violenta aplicada a ventas</h2>
+<p>CNV no es "ser blando". Es <em>ser quirúrgico con las palabras</em>. Cada vez que decís "siento que...", el cliente escucha reclamo. Cada vez que decís "pienso que...", escucha análisis.</p>
+<table>
+<tr><th>Evaluativo (activa defensas)</th><th>CNV (mantiene la relación)</th></tr>
+<tr><td>"Siento que no valoran nuestro tiempo."</td><td>"Pienso que necesitamos alinear los tiempos de entrega con su plan de producción."</td></tr>
+<tr><td>"Siento que el precio les parece caro."</td><td>"Pienso que no hemos cuantificado aún el ahorro en energía que este equipo genera."</td></tr>
+<tr><td>"Ustedes no entienden nuestra urgencia."</td><td>"Entiendo la urgencia. Veamos qué parte del alcance podemos acelerar sin comprometer la calidad."</td></tr>
+</table>
+<div class="exercise"><h4>🧪 Transformá esta frase</h4><p>"Me siento frustrado porque nunca me responden los correos."</p><textarea placeholder='Versión CNV: "Pienso que..."'></textarea></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">7</span> Contento vs Contexto — La separación que salva reuniones</h2>
+<p>Cuando un cliente te dice "es caro", tu cerebro técnico quiere defender el producto. Error. Hay dos dimensiones en juego:</p>
+<p><strong>Contenido:</strong> La objeción. Se responde con <em>datos</em>. "Nuestro CXT es ±0.035% vs ±0.075% de Rosemount. Esa diferencia de precisión significa UNA parada menos al año."</p>
+<p><strong>Contexto:</strong> La relación. Se protege con <em>respeto</em>. "Entiendo la preocupación por el presupuesto. Veamos juntos los números."</p>
+<div class="insight-box"><h4>💡 Regla de oro</h4><p>Jamás sacrifiques el Contexto por ganar una discusión de Contenido. Podés tener razón técnica y aún así perder al cliente para siempre.</p></div>
+</article>
+
+<!-- TEST -->
+<section style="margin-top:2.5rem">
+<h2 style="font-family:'Outfit',sans-serif;text-align:center;font-size:1.4rem;margin-bottom:1.5rem">🧪 Test Módulo 1 — 10 preguntas</h2>
+
+<div class="question"><h4>1. El "abismo técnico-comercial" es:</h4>
+<label class="option"><input type="radio" name="q1" value="a">La diferencia de precio entre dos proveedores</label>
+<label class="option"><input type="radio" name="q1" value="b">La distancia entre lo que el vendedor dice (specs) y lo que el comprador escucha (miedos)</label>
+<label class="option"><input type="radio" name="q1" value="c">El tiempo que tarda un cliente en decidir</label></div>
+
+<div class="question"><h4>2. En el caso Agrosuper, ¿cuál fue la cifra que sirvió como ancla de negociación?</h4>
+<label class="option"><input type="radio" name="q2" value="a">$500K — costo del sistema</label>
+<label class="option"><input type="radio" name="q2" value="b">$4.2M — costo de un lote de pollos perdido</label>
+<label class="option"><input type="radio" name="q2" value="c">$1.2M — costo anual de mantenimiento</label></div>
+
+<div class="question"><h4>3. En el caso Transelec, el dolor real no era técnico sino:</h4>
+<label class="option"><input type="radio" name="q3" value="a">El precio de las PMUs</label>
+<label class="option"><input type="radio" name="q3" value="b">Que el Gerente tendría que explicar personalmente una multa de $50M al directorio</label>
+<label class="option"><input type="radio" name="q3" value="c">La dificultad de instalar equipos en alta montaña</label></div>
+
+<div class="question"><h4>4. ¿Cuántos componentes tiene el Vector de Diferenciación (Vd)?</h4>
+<label class="option"><input type="radio" name="q4" value="a">Máximo 3</label><label class="option"><input type="radio" name="q4" value="b">Máximo 5</label><label class="option"><input type="radio" name="q4" value="c">Los que quieras</label></div>
+
+<div class="question"><h4>5. El "Zippo" en ventas representa:</h4>
+<label class="option"><input type="radio" name="q5" value="a">El producto más barato del mercado</label><label class="option"><input type="radio" name="q5" value="b">Un 10% de innovación que NADIE más ofrece y te saca de la guerra de precio</label><label class="option"><input type="radio" name="q5" value="c">Una técnica de cierre agresivo</label></div>
+
+<div class="question"><h4>6. En CNV, ¿qué palabra reemplaza a "siento" para ser más efectivo?</h4>
+<label class="option"><input type="radio" name="q6" value="a">"Creo"</label><label class="option"><input type="radio" name="q6" value="b">"Pienso"</label><label class="option"><input type="radio" name="q6" value="c">"Opino"</label></div>
+
+<div class="question"><h4>7. "Contenido vs Contexto" significa:</h4>
+<label class="option"><input type="radio" name="q7" value="a">Responder la objeción con datos sin dañar la relación</label><label class="option"><input type="radio" name="q7" value="b">Ignorar la objeción y cambiar de tema</label><label class="option"><input type="radio" name="q7" value="c">Debatir hasta tener razón</label></div>
+
+<div class="question"><h4>8. Un técnico de terreno tiene ventaja en ventas porque:</h4>
+<label class="option"><input type="radio" name="q8" value="a">Puede cotizar más barato</label><label class="option"><input type="radio" name="q8" value="b">Conoce el dolor real: sabe exactamente qué falla, cuándo y por qué</label><label class="option"><input type="radio" name="q8" value="c">Los clientes prefieren hablar con técnicos</label></div>
+
+<div class="question"><h4>9. ¿Cuál es una señal de que encontraste la "Mina de Oro"?</h4>
+<label class="option"><input type="radio" name="q9" value="a">El cliente pide el catálogo</label><label class="option"><input type="radio" name="q9" value="b">El cliente dice "si esto falla, me cortan la cabeza"</label><label class="option"><input type="radio" name="q9" value="c">El cliente pregunta por el precio</label></div>
+
+<div class="question"><h4>10. La Regla de Oro del Contexto vs Contenido es:</h4>
+<label class="option"><input type="radio" name="q10" value="a">Siempre tener la razón técnica</label><label class="option"><input type="radio" name="q10" value="b">Jamás sacrificar la relación por ganar una discusión técnica</label><label class="option"><input type="radio" name="q10" value="c">Nunca mostrar debilidad ante una objeción</label></div>
+
+<div style="text-align:center;margin:1.5rem 0">
+<button class="btn btn-primary" onclick="checkTest()">Corregir Test</button>
+<button class="btn btn-outline" onclick="resetTest()" style="margin-left:.5rem">Reintentar</button>
+</div>
+<div class="result" id="result"></div>
+</section>
+</div>
+<script src="tracker.js"></script>
+<script>
+function checkTest(){
+var a={q1:'b',q2:'b',q3:'b',q4:'b',q5:'b',q6:'b',q7:'a',q8:'b',q9:'b',q10:'b'},c=0;
+for(var[k,v] of Object.entries(a)){
+var s=document.querySelector('input[name="'+k+'"]:checked');
+var o=document.querySelectorAll('input[name="'+k+'"]');
+o.forEach(function(x){x.parentElement.classList.remove('correct','wrong');if(x.value===v)x.parentElement.classList.add('correct')});
+if(s&&s.value===v)c++;else if(s)s.parentElement.classList.add('wrong')
+}
+var r=document.getElementById('result');
+if(c>=7){r.className='result pass';r.innerHTML='<h3>✅ '+c+'/10 — Aprobado</h3><p>Entendiste el abismo. Pasá al Módulo 2.</p>'}
+else{r.className='result fail';r.innerHTML='<h3>❌ '+c+'/10 — Necesitás 7/10</h3><p>Repasá los casos Agrosuper y Transelec.</p>'}
+}
+function resetTest(){document.querySelectorAll('input[type=radio]').forEach(function(x){x.checked=false});document.querySelectorAll('.option').forEach(function(x){x.classList.remove('correct','wrong')});document.getElementById('result').className='result'}
+</script>
+</body>
+</html>

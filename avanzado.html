@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Academia CONECTA — Curso Avanzado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e1a;--card:#111827;--border:#1f2d45;--accent:#2563eb;--accent-hover:#3b82f6;--text:#e2e8f0;--muted:#64748b;--success:#10b981;--warning:#f59e0b;--danger:#ef4444;--gold:#d97706;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.8}
+.container{max-width:960px;margin:0 auto;padding:2rem}
+header{text-align:center;padding:2.5rem 0;border-bottom:1px solid var(--border);margin-bottom:2rem}
+header h1{font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:800}
+header .sub{color:var(--accent);font-size:1.1rem;margin-top:.3rem}
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.97);z-index:100;display:flex;align-items:flex-start;justify-content:center;overflow:auto}
+.modal-overlay.hidden{display:none!important}
+.modal-close{position:fixed;top:1rem;right:1rem;background:var(--danger);color:#fff;border:none;width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:200;display:flex;align-items:center;justify-content:center}
+.modal-frame{width:100%;max-width:980px;min-height:100vh;border:none;margin-top:55px}
+/* Lesson card */
+.lesson{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;margin-bottom:1.25rem}
+.lesson h2{font-family:'Outfit',sans-serif;font-size:1.3rem;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.lesson h2 .n{background:var(--accent);color:#fff;min-width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800}
+.lesson p{margin-bottom:1rem;font-size:.95rem}
+.lesson strong{color:var(--text)}
+.lesson em{color:var(--accent);font-style:normal;font-weight:600}
+.case-box{background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.25);border-left:4px solid var(--gold);padding:1.25rem 1.5rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.25rem 0}
+.case-box h4{color:var(--gold);font-family:'Outfit',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.case-box p{font-size:.88rem;color:var(--text)}
+.insight-box{background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.2);border-left:4px solid var(--accent);padding:1.25rem 1.5rem;border-radius:0 var(--radius) var(--radius) 0;margin:1.25rem 0}
+.insight-box h4{color:var(--accent);font-family:'Outfit',sans-serif;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.exercise{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.2);border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1.25rem 0}
+.exercise h4{color:var(--success);font-family:'Outfit',sans-serif;margin-bottom:.75rem}
+.exercise textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:1rem;font-family:'Inter',sans-serif;font-size:.9rem;resize:vertical;min-height:80px;margin-top:.5rem}
+.exercise textarea:focus{outline:none;border-color:var(--success)}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.85rem}
+th{text-align:left;padding:.65rem .8rem;background:rgba(37,99,235,.08);color:var(--accent);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;font-family:'Outfit',sans-serif}
+td{padding:.65rem .8rem;border-bottom:1px solid var(--border)}tr:last-child td{border-bottom:none}
+.signal{background:rgba(16,185,129,.05);border:1px solid rgba(16,185,129,.15);padding:.75rem 1rem;border-radius:8px;margin-bottom:.4rem;font-size:.85rem;color:var(--success)}
+.question{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:.75rem}
+.question h4{margin-bottom:.8rem;font-size:.9rem}
+.option{display:block;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.6rem .9rem;margin-bottom:.4rem;cursor:pointer;transition:all .2s;font-size:.85rem}
+.option:hover{border-color:var(--accent)}.option input{margin-right:.7rem;accent-color:var(--accent)}
+.option.correct{border-color:var(--success);background:rgba(16,185,129,.06)}
+.option.wrong{border-color:var(--danger);background:rgba(239,68,68,.06)}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.5rem;border-radius:100px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:'Inter',sans-serif}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}.btn-outline:hover{border-color:var(--accent)}
+.result{text-align:center;padding:1.5rem;border-radius:var(--radius);margin-top:1rem;display:none}
+.result.pass{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.25);display:block}
+.result.fail{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25);display:block}
+.result h3{font-family:'Outfit',sans-serif;font-size:1.3rem;margin-bottom:.3rem}
+.result.pass h3{color:var(--success)}.result.fail h3{color:var(--danger)}
+.result p{font-size:.85rem;color:var(--muted)}
+footer{text-align:center;padding:3rem 1rem;color:var(--muted);font-size:.75rem;border-top:1px solid var(--border);margin-top:3rem}
+@media(max-width:700px){.container{padding:1rem}header h1{font-size:1.5rem}.lesson{padding:1.25rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>🧠 Academia CONECTA</h1>
+<p class="sub">Metodología TTung de Ventas B2B · Nivel Avanzado · Casos Reales</p>
+</header>
+
+<!-- ═══════════════ MÓDULO 1: FUNDAMENTOS ═══════════════ -->
+<article class="lesson">
+<h2><span class="n">1</span> El Abismo Técnico-Comercial — Por qué los ingenieros pierden ventas</h2>
+<p>Toda tu carrera te entrenó para pensar en <em>especificaciones</em>. Voltajes, tolerancias, protocolos. Pero cuando entrás a la oficina de un Gerente de Planta, él no está pensando en specs. Está pensando en su bono, en su jefe, y en la última vez que un proveedor le falló.</p>
+<p>El <em>abismo técnico-comercial</em> es la distancia entre lo que vos decís y lo que él escucha. Cada vez que mencionás "±0.035% de precisión", él escucha "riesgo de que esto no funcione y yo quede mal".</p>
+
+<div class="case-box">
+<h4>📋 Caso Real — Agrosuper (2024)</h4>
+<p>CONECTA fue llamado para cotizar un sistema de monitoreo de temperatura en cámaras de frío. El ingeniero de Agrosuper preguntó por specs del sensor. La respuesta típica hubiera sido: "Nuestro sensor PT100 tiene ±0.15°C con tiempo de respuesta de 0.5s".</p>
+<p>En vez de eso, el vendedor CONECTA preguntó: <em>"¿Cuánto vale la merma de un lote de pollos si la cámara falla un fin de semana?"</em> La respuesta: $4.2M por lote. Esa cifra se convirtió en el ancla de toda la negociación. Ya no se hablaba de sensores. Se hablaba de proteger $4.2M.</p>
+</div>
+<div class="insight-box"><h4>💡 Principio</h4><p>No vendas el termómetro. Vende la tranquilidad de que el gerente no va a recibir una llamada el domingo a las 3am porque se echaron a perder 40 toneladas de producto. <em>El dolor económico siempre es más persuasivo que la especificación técnica.</em></p></div>
+<div class="exercise"><h4>🧪 Ejercicio</h4><p>Pensá en tu producto/servicio principal. ¿Cuál es el "momento domingo 3am" de tu cliente? Escribilo:</p><textarea placeholder="Si ______ falla, el cliente pierde $______ y recibe una llamada de ______."></textarea></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">2</span> Los 5 Componentes del Vector de Diferenciación (Vd)</h2>
+<p>No basta con ser "mejor". Tenés que poder articular en qué sos distinto. El Vd son máximo 5 atributos que <em>solo vos</em> ofrecés. No es "somos más rápidos". Es "respondemos en < 4 horas porque tenemos técnicos en Antofagasta, Calama y Santiago".</p>
+<table><tr><th>Componente</th><th>Genérico (no sirve)</th><th>Específico (vende)</th></tr>
+<tr><td>Velocidad</td><td>"Rápidos"</td><td>"Técnico en terreno en < 4 horas, 3 ciudades"</td></tr>
+<tr><td>Calidad</td><td>"Certificados"</td><td>"SIL3 de fábrica. No es upgrade, es estándar"</td></tr>
+<tr><td>Soporte</td><td>"24/7"</td><td>"Atendemos el teléfono un viernes a las 8pm. Emerson te manda a un chatbot en inglés"</td></tr>
+<tr><td>Integración</td><td>"Compatible"</td><td>"Instalamos sobre tu DCS actual sin parar la planta ni un minuto"</td></tr>
+<tr><td>Garantía</td><td>"12 meses"</td><td>"Si en 30 días no ves resultados, no pagás. Sin letra chica"</td></tr></table>
+<div class="exercise"><h4>🧪 Ejercicio</h4><p>Definí TU Vector de Diferenciación en máximo 5 componentes específicos:</p><textarea placeholder="1. ...
+2. ...
+3. ...
+4. ...
+5. ..."></textarea></div>
+</article>
+
+<!-- ═══════════════ MÓDULO 2: VALIDACIÓN ═══════════════ -->
+<article class="lesson">
+<h2><span class="n">3</span> La Escalera P×M×R — ¿Podés cumplir lo que vendés?</h2>
+<p>El 80% de los vendedores técnicos fracasan porque venden lo que no pueden entregar. La Escalera es un filtro de 3 pasos que <em>debés</em> pasar antes de comprometer un solo recurso comercial.</p>
+
+<p><strong>P — Producto:</strong> ¿Qué vendés exactamente? Una frase. No un párrafo.<br>
+<strong>M — Mercado:</strong> ¿Hay gente con hambre por esto? ¿Es obligatorio o discrecional?<br>
+<strong>R — Capacidad de Respuesta:</strong> ¿Tenés el hardware, el equipo, el proveedor y los tiempos? Si una sola R está en rojo, <em>prohibido vender</em>.</p>
+
+<div class="case-box">
+<h4>📋 Caso Real — PMU Vizimax vs SEL (2025)</h4>
+<p>CONECTA ofrecía PMUs Vizimax para cumplimiento CEN. Pero en 2025 el mercado cambió: SEL lanzó PMUs que medían más puntos de medición. Los clientes empezaron a migrar. La R de CONECTA pasó de 🟢 a 🔴.</p>
+<p>Se evaluaron 3 caminos:<br><strong>A)</strong> Cambiar Vizimax por SEL — implicaba re-certificar todo.<br><strong>B)</strong> Redefinir el nicho: solo subestaciones < 10MW donde Vizimax competía.<br><strong>C)</strong> Diferenciar por servicio: paquetizar como "Cumplimiento CEN Integral" donde el hardware era commodity.<br>Se eligió <strong>Camino C</strong>. Resultado: el margen subió 18% porque ahora se vendía el paquete completo, no el fierro.</p>
+</div>
+<div class="exercise"><h4>🧪 Ejercicio</h4><p>Evaluá R para tu servicio principal. ¿Hay algún 🔴?</p><textarea placeholder="Hardware: 🟢🟡🔴 — porque...
+Equipo: 🟢🟡🔴 — porque...
+Tiempo: 🟢🟡🔴 — porque..."></textarea></div>
+</article>
+
+<!-- ═══════════════ MÓDULO 3: DINERO ═══════════════ -->
+<article class="lesson">
+<h2><span class="n">4</span> Mapa de Dinero — Dónde está la plata (y dónde no)</h2>
+<p>No todos los nichos son iguales. Algunos te van a hacer rico. Otros te van a quemar tiempo y recursos. El Mapa de Dinero es una matriz 3×3 que cruza <em>Potencial de Venta</em> vs <em>Esfuerzo de Respuesta</em>.</p>
+
+<table><tr><th></th><th>Alto Pv</th><th>Medio Pv</th><th>Bajo Pv</th></tr>
+<tr><td><strong>Bajo Esfuerzo</strong></td><td>⭐⭐⭐ Foco</td><td>⭐⭐ Volumen</td><td>⭐ Mantener</td></tr>
+<tr><td><strong>Medio Esfuerzo</strong></td><td>⭐⭐⭐ Invertir</td><td>⭐⭐ Evaluar</td><td>—</td></tr>
+<tr><td><strong>Alto Esfuerzo</strong></td><td>⭐⭐ ROI</td><td>—</td><td>✗ Descartar</td></tr></table>
+
+<div class="case-box">
+<h4>📋 Caso Real — CONECTA Portafolio 2026</h4>
+<p><strong>⭐⭐⭐ CEN PMU >200MW:</strong> Alto Pv ($5M+), Bajo Esfuerzo (ya lo hacen). Prioridad: defender.<br>
+<strong>⭐⭐⭐ SCADA Plantas Mineras:</strong> Muy Alto Pv ($10M+), Medio Esfuerzo (requiere partner DCS). Prioridad: invertir.<br>
+<strong>⭐⭐ Ciberseguridad NERC-CIP:</strong> Medio Pv ($2M), Bajo Esfuerzo. Prioridad: volumen.<br>
+<strong>✗ Automatización Alimentos:</strong> Medio Pv ($3M), Medio Esfuerzo, pero requiere educar al mercado. Solo si hay piloto.</p>
+</div>
+</article>
+
+<!-- ═══════════════ MÓDULO 4: EJECUCIÓN ═══════════════ -->
+<article class="lesson">
+<h2><span class="n">5</span> El TAE — Si no está en la tabla, no existe</h2>
+<p>La Tabla de Acciones Estratégicas es tu herramienta de ejecución diaria. 9 columnas. Cada cuenta activa, una fila. Se actualiza cada lunes.</p>
+
+<table><tr><th>Columna</th><th>Qué va</th></tr>
+<tr><td>Cliente</td><td>Nombre de la empresa, no "el gerente"</td></tr>
+<tr><td>Servicio</td><td>Qué les estás vendiendo exactamente</td></tr>
+<tr><td>Valor Est.</td><td>$$$ del contrato potencial</td></tr>
+<tr><td>Campeón</td><td><em>Nombre real + cargo.</em> Sin nombre = Huérfano = Riesgo</td></tr>
+<tr><td>Último Contacto</td><td>Fecha del último contacto real</td></tr>
+<tr><td>Próxima Acción</td><td>Específica. "Llamar" no sirve. "Coordinar visita jueves 3pm con Juan Pérez" sí</td></tr>
+<tr><td>Responsable</td><td>Quién de tu equipo</td></tr>
+<tr><td>Deadline</td><td>Sin deadline, la acción no existe</td></tr>
+<tr><td>Estado</td><td>🟢 Avanzando · 🟡 Estancado · 🔴 Riesgo</td></tr></table>
+
+<div class="case-box">
+<h4>📋 Caso Real — Minera Meridian (EDAC)</h4>
+<p>CONECTA tenía una cotización de $180K con Minera Meridian para normalización de esquemas EDAC. El TAE mostraba 🟡 hace 3 semanas — sin respuesta del Campeón (Jefe de Protecciones). En vez de esperar, se escaló al Gerente de Operaciones con un mensaje directo: "Tu equipo nos pidió cotizar los EDAC. Llevamos 3 semanas sin respuesta. ¿Sigue siendo prioritario?" El gerente respondió en 2 horas. El proyecto se reactivó.</p>
+<p><em>Lección: El TAE no es para sentirte organizado. Es para detectar cuentas muertas antes de que sea tarde.</em></p>
+</div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">6</span> Campeón vs Huérfano — Sin nombre, no hay proyecto</h2>
+<p>Un <strong>Campeón</strong> es una persona real — con nombre, apellido y cargo — cuya reputación crece si tu proyecto funciona. No es "el gerente del área". Es Juan Pérez, 3 años pidiendo automatizar, nunca le dieron presupuesto, y si tu proyecto sale bien, <em>él</em> es el héroe.</p>
+<p>Un <strong>Huérfano</strong> es un proyecto sin Campeón. Morirá en el primer recorte de presupuesto. Siempre.</p>
+
+<div class="insight-box"><h4>💡 Cómo cultivar un Campeón</h4><p>1. Identificalo en la primera reunión (el que más pregunta, el que toma notas).<br>2. Dale data que su jefe no tiene — convertilo en "el que sabe".<br>3. Hacelo visible: mencioná su nombre en informes, cc en correos.<br>4. Cuando el proyecto funcione, asegurate de que <em>él</em> reciba el crédito.</p></div>
+</article>
+
+<!-- ═══════════════ MÓDULO 5: DOLOR ═══════════════ -->
+<article class="lesson">
+<h2><span class="n">7</span> La Mina de Oro — 15 Preguntas para Extraer el Miedo Real</h2>
+<p>El comprador no te dice lo que necesita. Te dice lo que no lo compromete. Tu trabajo es llegar al miedo que calla.</p>
+
+<p><strong>Gerente de Planta:</strong><br>1. "¿Cuál fue el peor día en esta planta en el último año?"<br>2. "Si un equipo crítico falla un viernes a las 8pm, ¿quién recibe la llamada?"<br>3. "¿Qué KPI le quita el sueño?"<br>4. "¿Cuánto cuesta una hora de parada no planificada?"</p>
+
+<p><strong>Gerente de Mantenimiento:</strong><br>5. "¿Cuál es el equipo que más veces han reparado este año?"<br>6. "¿Se han quedado sin repuesto crítico en el peor momento?"<br>7. "¿Cómo saben que un equipo va a fallar? ¿O se enteran cuando ya falló?"<br>8. "Si tuviera que defender su presupuesto mañana, ¿qué dato le falta?"</p>
+
+<p><strong>Gerente de TI / Innovación:</strong><br>9. "¿Qué dato de la planta le llega tarde?"<br>10. "Si pudiera ver UNA sola cosa en tiempo real que hoy no ve, ¿qué sería?"<br>11. "¿Hay alguien que se resiste a digitalizar? ¿Por qué?"<br>12. "¿Qué proyecto de digitalización no salió como esperaban?"</p>
+
+<p><strong>CFO / Finanzas:</strong><br>13. "¿Cómo evalúan el retorno de una inversión en tecnología?"<br>14. "¿Qué proveedor actual les gustaría tener de backup?"<br>15. "Si este proyecto sale mal, ¿quién asume el costo político?"</p>
+
+<div class="signal"><strong>🔑 Señal de veta:</strong> "Si esto falla, me cortan la cabeza." — Dejá de vender. Seguí preguntando.</div>
+<div class="signal"><strong>🔑 Señal de veta:</strong> "Ya intentamos arreglarlo y no funcionó." — Oportunidad de ser el que SÍ lo resuelve.</div>
+<div class="signal"><strong>🔑 Señal de veta:</strong> "Mi jefe me pregunta todas las semanas por este número." — Dale munición para su jefe.</div>
+</article>
+
+<!-- ═══════════════ MÓDULO 6: CIERRE ═══════════════ -->
+<article class="lesson">
+<h2><span class="n">8</span> Las 6 Objeciones — Cómo cerrar sin presionar</h2>
+
+<div class="case-box"><h4>💸 "Es muy caro"</h4>
+<p><strong>Lo que teme:</strong> Que no tenga retorno. Que su jefe lo cuestione.<br>
+<strong>Ancla:</strong> "¿Comparado con qué referencia?"<br>
+<strong>Dato CONECTA:</strong> -30% CAPEX vs Honeywell. Payback 4 meses. CXT ±0.035%.<br>
+<strong>Rebote:</strong> "¿Y si el proyecto se paga solo en menos de 12 meses? ¿Cambia la conversación?"</p></div>
+
+<div class="case-box"><h4>🌎 "¿Quién más lo usa en Chile?"</h4>
+<p><strong>Lo que teme:</strong> Ser el primero. Miedo al riesgo.<br>
+<strong>Ancla:</strong> "Tenemos referencias en Latinoamérica directamente aplicables."<br>
+<strong>Dato:</strong> CEMEX, Sinopec, Transelec. 30K+ bases globales. 60+ desplazamientos.<br>
+<strong>Rebote:</strong> "En su industria serían pioneros. ¿Eso les preocupa o les gusta?"</p></div>
+
+<div class="case-box"><h4>🏢 "Ya tenemos proveedor"</h4>
+<p><strong>Ancla:</strong> "No venimos a reemplazar. Agregamos inteligencia."<br>
+<strong>Dato:</strong> PRIDE + TPT se integran sobre cualquier DCS. Multi-marca.<br>
+<strong>Rebote:</strong> "¿Qué es lo que su proveedor actual NO les está dando?"</p></div>
+
+<div class="case-box"><h4>📧 "Mándame info por correo"</h4>
+<p><strong>Traducción:</strong> No quiere decir que no en persona.<br>
+<strong>Contra:</strong> "Prefiero mostrarte en 20 min. ¿Jueves?" — Llevá one-pager IMPRESO.</p></div>
+
+<div class="case-box"><h4>📉 "Sin presupuesto este año"</h4>
+<p><strong>Contra:</strong> "Piloto sin costo 30 días. Si hay valor, buscamos cómo."<br>
+<strong>Dato:</strong> Payback < 12 meses. El ahorro financia el proyecto.</p></div>
+
+<div class="case-box"><h4>⚠️ "¿Y si no funciona?"</h4>
+<p><strong>Contra:</strong> "Por eso arrancamos con piloto acotado. 30-60 días. Sin compromiso."<br>
+<strong>Rebote:</strong> "¿Qué necesitaría ver en 30 días para sentirse seguro de escalar?"</p></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">9</span> Protocolo Vivation — Manejar la ansiedad en tiempo real</h2>
+<p>Cuando un cliente te objeta el precio y sentís ese nudo en el estómago, tu cerebro activa el modo lucha/huida. Decís cosas que no querés decir. Ofrecés descuentos que no podés dar.</p>
+<p>Vivation es una técnica de 5 pasos para manejar esa ansiedad <em>durante</em> la reunión:</p>
+<p><strong>1.</strong> Localizá la sensación física (pecho, estómago, garganta).<br>
+<strong>2.</strong> Respirás hacia esa zona. No intentes relajarla. Observala.<br>
+<strong>3.</strong> Nombrala internamente: "esto es ansiedad por la objeción de precio".<br>
+<strong>4.</strong> Separá el Contenido (la objeción) del Contexto (tu estado emocional).<br>
+<strong>5.</strong> Respondé al Contenido con datos. Protegé el Contexto con respeto.</p>
+<div class="insight-box"><h4>💡 Dato neurocientífico</h4><p>Nombrar una emoción reduce la actividad de la amígdala en un 40%. No es new age. Es neurociencia. Decir internamente "esto es ansiedad" literalmente te calma.</p></div>
+</article>
+
+<article class="lesson">
+<h2><span class="n">10</span> La Frase de Cierre — Tu momento</h2>
+<p>No existe una frase mágica universal. Pero sí una <em>estructura</em> que funciona:</p>
+<div class="insight-box"><h4>📐 La estructura de 3 partes</h4><p><strong>1. Negación de lo obvio:</strong> "No vendemos productos."<br><strong>2. Beneficio emocional:</strong> "Vendemos la tranquilidad de que..."<br><strong>3. Urgencia:</strong> "...ANTES de que necesites tomar la decisión."</p></div>
+<p>Personalizala con tu servicio y tu voz. Practicá en el espejo. Cuando la digas en una reunión real, tiene que sonar natural, no ensayada.</p>
+<div class="exercise"><h4>🧪 Ejercicio Final</h4><p>Redactá TU frase de cierre personal:</p><textarea placeholder="No vendemos ______. Vendemos la tranquilidad de que ______ ANTES de que ______."></textarea></div>
+</article>
+
+<!-- ═══════════════ TEST ═══════════════ -->
+<section style="margin-top:3rem">
+<h2 style="font-family:'Outfit',sans-serif;text-align:center;font-size:1.5rem;margin-bottom:2rem">🧪 Test Final — 10 preguntas</h2>
+
+<div class="question"><h4>1. ¿Qué es el "abismo técnico-comercial"?</h4>
+<label class="option"><input type="radio" name="q1" value="a">La diferencia de precio entre dos proveedores</label>
+<label class="option"><input type="radio" name="q1" value="b">La distancia entre lo que el vendedor dice (especificaciones) y lo que el comprador escucha (miedos)</label>
+<label class="option"><input type="radio" name="q1" value="c">El tiempo que tarda un cliente en decidir</label></div>
+
+<div class="question"><h4>2. En el caso Agrosuper, ¿cuál fue la cifra que se usó como ancla de negociación?</h4>
+<label class="option"><input type="radio" name="q2" value="a">$500K — costo del sistema de monitoreo</label>
+<label class="option"><input type="radio" name="q2" value="b">$4.2M — costo de un lote de pollos perdido</label>
+<label class="option"><input type="radio" name="q2" value="c">$1.2M — costo anual de mantenimiento</label></div>
+
+<div class="question"><h4>3. ¿Cuántos componentes tiene el Vector de Diferenciación (Vd)?</h4>
+<label class="option"><input type="radio" name="q3" value="a">Máximo 3</label>
+<label class="option"><input type="radio" name="q3" value="b">Máximo 5</label>
+<label class="option"><input type="radio" name="q3" value="c">Máximo 10</label></div>
+
+<div class="question"><h4>4. En el caso PMU Vizimax vs SEL, ¿qué camino se eligió y por qué?</h4>
+<label class="option"><input type="radio" name="q4" value="a">Camino A — Cambiar Vizimax por SEL</label>
+<label class="option"><input type="radio" name="q4" value="b">Camino C — Diferenciar por servicio, margen subió 18%</label>
+<label class="option"><input type="radio" name="q4" value="c">Camino B — Nicho de subestaciones chicas</label></div>
+
+<div class="question"><h4>5. Un proyecto sin Campeón interno es un:</h4>
+<label class="option"><input type="radio" name="q5" value="a">Proyecto de bajo riesgo</label>
+<label class="option"><input type="radio" name="q5" value="b">Huérfano — muere en el primer recorte de presupuesto</label>
+<label class="option"><input type="radio" name="q5" value="c">Proyecto que se puede cerrar con descuento</label></div>
+
+<div class="question"><h4>6. En el caso Minera Meridian, ¿qué se hizo cuando el TAE estaba en 🟡 hace 3 semanas?</h4>
+<label class="option"><input type="radio" name="q6" value="a">Se esperó una semana más</label>
+<label class="option"><input type="radio" name="q6" value="b">Se escaló al Gerente de Operaciones — respondió en 2 horas</label>
+<label class="option"><input type="radio" name="q6" value="c">Se ofreció un descuento para reactivar</label></div>
+
+<div class="question"><h4>7. ¿Cuál NO es una señal de Mina de Oro?</h4>
+<label class="option"><input type="radio" name="q7" value="a">"Si esto falla, me cortan la cabeza"</label>
+<label class="option"><input type="radio" name="q7" value="b">"Mándeme el catálogo y lo revisamos con calma"</label>
+<label class="option"><input type="radio" name="q7" value="c">"Ya intentamos arreglarlo y no funcionó"</label></div>
+
+<div class="question"><h4>8. Ante "es caro", la respuesta de anclaje correcta es:</h4>
+<label class="option"><input type="radio" name="q8" value="a">"Tenemos descuento por volumen"</label>
+<label class="option"><input type="radio" name="q8" value="b">"¿Comparado con qué referencia?"</label>
+<label class="option"><input type="radio" name="q8" value="c">"Nuestra calidad lo justifica"</label></div>
+
+<div class="question"><h4>9. Nombrar una emoción internamente reduce la actividad de la amígdala en:</h4>
+<label class="option"><input type="radio" name="q9" value="a">10%</label>
+<label class="option"><input type="radio" name="q9" value="b">25%</label>
+<label class="option"><input type="radio" name="q9" value="c">40%</label></div>
+
+<div class="question"><h4>10. La Frase de Cierre tiene 3 elementos. El segundo es:</h4>
+<label class="option"><input type="radio" name="q10" value="a">Negación de lo obvio</label>
+<label class="option"><input type="radio" name="q10" value="b">Beneficio emocional ("la tranquilidad de que...")</label>
+<label class="option"><input type="radio" name="q10" value="c">Urgencia ("ANTES de que...")</label></div>
+
+<div style="text-align:center;margin:2rem 0">
+<button class="btn btn-primary" onclick="checkTest()" style="font-size:1rem;padding:.8rem 2.5rem">Corregir Test</button>
+<button class="btn btn-outline" onclick="resetTest()" style="font-size:1rem;padding:.8rem 2.5rem;margin-left:.5rem">Reintentar</button>
+</div>
+<div class="result" id="result"></div>
+</section>
+
+<footer>CONECTA Ingeniería S.A. · Basado en TTung Agent System · Nivel Avanzado · Julio 2026</footer>
+</div>
+
+<div class="modal-overlay hidden" id="modal">
+<button class="modal-close" onclick="closeModal()">✕</button>
+<iframe class="modal-frame" id="frame"></iframe>
+</div>
+
+<script>
+function checkTest(){
+var a={q1:'b',q2:'b',q3:'b',q4:'b',q5:'b',q6:'b',q7:'b',q8:'b',q9:'c',q10:'b'},c=0;
+for(var[k,v] of Object.entries(a)){
+var s=document.querySelector('input[name="'+k+'"]:checked');
+var o=document.querySelectorAll('input[name="'+k+'"]');
+o.forEach(function(x){x.parentElement.classList.remove('correct','wrong');if(x.value===v)x.parentElement.classList.add('correct')});
+if(s&&s.value===v)c++;else if(s)s.parentElement.classList.add('wrong')
+}
+var r=document.getElementById('result');
+if(c>=7){r.className='result pass';r.innerHTML='<h3>🏆 '+c+'/10 — Aprobado</h3><p>Tenés las bases para vender con metodología. Ahora aplicalo en tu próxima reunión.</p>'}
+else{r.className='result fail';r.innerHTML='<h3>❌ '+c+'/10 — Necesitás 7/10</h3><p>Repasá los casos reales y los principios clave.</p>'}
+}
+function resetTest(){document.querySelectorAll('input[type=radio]').forEach(function(x){x.checked=false});document.querySelectorAll('.option').forEach(function(x){x.classList.remove('correct','wrong')});document.getElementById('result').className='result'}
+</script>
+</body>
+</html>

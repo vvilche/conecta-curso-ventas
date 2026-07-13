@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>EXPONOR 2026 — Catálogo de Expositores | CONECTA</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--accent:#2563eb;--text:#1e293b;--muted:#64748b;--red:#ef4444;--warn:#d97706;--green:#10b981}*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:13px;line-height:1.6}.container{max-width:1200px;margin:0 auto;padding:1.5rem}h1{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:800;text-align:center;color:var(--accent)}.sub{text-align:center;color:var(--muted);font-size:.78rem;margin:.3rem 0 1rem}.stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin:1rem 0}.si{text-align:center;padding:.5rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:8px}.si-n{font-family:'IBM Plex Mono',monospace;font-size:1.2rem;font-weight:700}.si-l{font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.filters{display:flex;gap:.3rem;flex-wrap:wrap;justify-content:center;margin:.5rem 0}.flt{padding:.3rem .7rem;border:1px solid var(--border);border-radius:100px;background:var(--card);cursor:pointer;font-size:.7rem;font-weight:500;transition:all .2s}.flt:hover,.flt.on{background:var(--accent);color:#fff;border-color:var(--accent)}.search{width:100%;max-width:400px;padding:.4rem .8rem;border:1px solid var(--border);border-radius:100px;font-size:.8rem;margin:.5rem auto;display:block;outline:none;font-family:'Inter'}.search:focus{border-color:var(--accent)}table{width:100%;border-collapse:collapse;font-size:.75rem;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}th{text-align:left;padding:.4rem .6rem;background:#f1f5f9;font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);cursor:pointer;position:sticky;top:0}td{padding:.35rem .6rem;border-bottom:1px solid var(--border)}tr:hover{background:rgba(37,99,235,.02)}.hot{background:rgba(239,68,68,.03)}.hot td:first-child{color:var(--red);font-weight:700}.competitor{background:rgba(217,119,6,.03)}.competitor td:first-child{color:var(--warn)}.tag{display:inline-block;padding:.08rem .3rem;border-radius:100px;font-size:.58rem;font-weight:700;margin-left:.3rem}.tag-hot{background:#fef2f2;color:var(--red)}.tag-comp{background:#fff7ed;color:var(--warn)}.tag-cliente{background:#f0fdf4;color:var(--green)}.tag-china{background:rgba(37,99,235,.06);color:var(--accent)}footer{text-align:center;padding:2rem;color:var(--muted);font-size:.65rem}</style></head><body><div class="container">
+<header><h1>📋 EXPONOR 2026 — Catálogo de Expositores</h1><p class="sub">1,388 expositores · 14 pabellones · Datos oficiales</p>
+<div class="stats">
+<div class="si"><div class="si-n">1,388</div><div class="si-l">Expositores</div></div>
+<div class="si"><div class="si-n">110</div><div class="si-l">Relevantes CONECTA</div></div>
+<div class="si"><div class="si-n" style="color:var(--red)">22</div><div class="si-l">🔥 Leads calificados</div></div>
+<div class="si"><div class="si-n" style="color:var(--warn)">7</div><div class="si-l">Competidores</div></div>
+</div>
+<input class="search" type="text" id="s" placeholder="🔍 Buscar expositor..." oninput="f()">
+<div class="filters">
+<button class="flt on" onclick="set('all')">Todos (1,388)</button>
+<button class="flt" onclick="set('hot')">🔥 Leads (22)</button>
+<button class="flt" onclick="set('cliente')">✅ Clientes/Prospectos (45)</button>
+<button class="flt" onclick="set('competidor')">⚠️ Competidores (7)</button>
+<button class="flt" onclick="set('china')">🇨🇳 Pabellón China (40)</button>
+<button class="flt" onclick="set('litio')">Pabellón Litio (146)</button>
+<button class="flt" onclick="set('cobre')">Pabellón Cobre (249)</button>
+</div></header>
+<table><thead><tr><th>#</th><th>Expositor</th><th>Pabellón</th><th>Stand</th><th>Tipo</th></tr></thead><tbody id="tb"></tbody></table>
+<footer>CONECTA Ingeniería · EXPONOR 2026 · Julio 2026</footer>
+</div>
+<script>
+var D=[
+  ["Soluciones Mineras SpA","Pabellón Hierro","1458","cliente"],
+  ["Orpak Latina SpA","Pabellón Cobalto","1451","cliente"],
+  ["ESE Maquinarias","Pabellón Cobalto","1450","cliente"],
+  ["Tempel","Pabellón Cobalto","1449","cliente"],
+  ["Flanders Electric de Chile","Pabellón Cobalto","1447","cliente"],
+  ["Ing. y Obras Civiles Civelec Ltda.","Pabellón Cobalto","1446","cliente"],
+  ["Electromin","Pabellón Cobalto","1402","cliente"],
+  ["YPF GAS","Pabellón Cobalto","1401","cliente"],
+  ["Caxtor","Pabellón Cobalto","1400","cliente"],
+  ["Scantech International PTY LTD","Pabellón Cobalto","1399","cliente"],
+  ["Nomad Solar Energy","Pabellón Cobalto","1398","cliente"],
+  ["Voltai","Pabellón Cobalto","1397","cliente"],
+  ["Erbessd Instruments","Pabellón Cobalto","1355","cliente"],
+  ["Scancontrols Ing. Ltda.","Pabellón Cobalto","1342","cliente"],
+  ["Corporación Cluster Minero Región Antofagasta","Pabellón Molibdeno","1274","cliente"],
+  ["Revista Minera Crisol","Pabellón Molibdeno","1268","cliente"],
+  ["Cía. Minera Cordillera Chile SCM","Pabellón Oro","1178","cliente"],
+  ["Hazard Control","Pabellón Oro","1105","cliente"],
+  ["Wuyun Transmission Machinery Corp.","Pabellón Oro","1083","china"],
+  ["Hayward Flow Control","Pabellón Oro","1076","cliente"],
+  ["Servicios Lucas Diesel S.A.","Pabellón Oro","1062","cliente"],
+  ["Gasco","Pabellón Litio","1032","hot"],
+  ["Abastible","Pabellón Litio","1030","cliente"],
+  ["Statkraft Chile","Pabellón Litio","1029","cliente"],
+  ["Supcon/Conecta","Pabellón Litio","1027","hot"],
+  ["Copa-Data","Pabellón Litio","1026","cliente"],
+  ["Powermax","Pabellón Litio","1025","cliente"],
+  ["Yokogawa America Do Sul Chile","Pabellón Litio","1023","competidor"],
+  ["Zelestra Energy","Pabellón Litio","1021","cliente"],
+  ["Vitel","Pabellón Litio","1019","cliente"],
+  ["Engie","Pabellón Litio","1018","hot"],
+  ["Rhomberg","Pabellón Litio","1017","cliente"],
+  ["Grupo Genera Ltda.","Pabellón Litio","1016","cliente"],
+  ["SolarLatam","Pabellón Litio","1015","cliente"],
+  ["Proyectos y Tecnologías Ltda.","Pabellón Litio","1008","cliente"],
+  ["SOLARMOVIL SpA","Pabellón Litio","1006","cliente"],
+  ["Sieyuan Electric Co., Ltd.","Pabellón Litio","1002","china"],
+  ["Layer Electronics S.R.L.","Pabellón Litio","992","cliente"],
+  ["Copec","Pabellón Litio","987","hot"],
+  ["Sapri SpA","Pabellón Litio","985","cliente"],
+  ["Métrica SpA","Pabellón Litio","984","cliente"],
+  ["Fluye Mining","Pabellón Litio","981","cliente"],
+  ["Erasmus Electric","Pabellón Litio","980","cliente"],
+  ["Tectramin","Pabellón Litio","979","cliente"],
+  ["AES Chile","Pabellón Litio","978","cliente"],
+  ["Esmax","Pabellón Litio","976","cliente"],
+  ["Cía. Minera CCL","Pabellón Litio","945","cliente"],
+  ["ISVA SpA","Pabellón Litio","931","cliente"],
+  ["Capelec Capacitaciones e Ing. Eléctrica","Pabellón Litio","894","cliente"],
+  ["Winters Instruments","Pabellon Yodo","790","cliente"],
+  ["Endress+Hauser Chile Ltda.","Pabellon Yodo","690","competidor"],
+  ["ABB S.A.","Pabellon Yodo","686","competidor"],
+  ["Scontrol","Pabellón Plata","572","cliente"],
+  ["Phoenix Mining Equipment (Shanghai)","Pabellón Plata","537","china"],
+  ["Yuncheng Anjie Fan Electric Co.","Pabellón Plata","497","china"],
+  ["Dandong Dongfang Measurement & Control","Pabellón Plata","493","china"],
+  ["Huainan Wantai Electric Co.","Pabellón Plata","466","china"],
+  ["Changsha Top Diesel Injection Co.","Pabellón Plata","463","china"],
+  ["Wuxi Rio Minerals Co., Ltd.","Pabellón Plata","439","china"],
+  ["Sec Electric Machinery Co.,Ltd.","Pabellón Plata","411","china"],
+  ["3HZ Solar","Pabellón Plata","394","china"],
+  ["Sany Transmission Division","Pabellón Plata","388","china"],
+  ["Henan Wesdom Flow Control Co.","Pabellón Plata","381","china"],
+  ["Vanner Electric","Pabellón Plata","372","cliente"],
+  ["Hefei Obote Automation Equipment Co.","Pabellón Plata","326","china"],
+  ["IGMA Antofagasta SpA","Pabellón Plata","320","cliente"],
+  ["Resiter","Pabellón Plata","316","hot"],
+  ["Bray Controls S.A.","Pabellón Cobre","276","cliente"],
+  ["Emerson Professional Tools","Pabellón Cobre","238","competidor"],
+  ["Emerson","Pabellón Cobre","237","competidor"],
+  ["Revista Nueva Minera y Energía","Pabellón Cobre","152","cliente"],
+  ["Automatic Systems","Pabellón Cobre","144B","cliente"],
+  ["Eecol Electric","Exterior E","132","cliente"],
+  ["Instruments & Technology Solutions SpA","Exterior C","101","cliente"],
+  ["BHP","Exterior C","78","hot"],
+  ["Antofagasta Minerals","Exterior C","70","hot"],
+  ["Zemaq Electric","Pabellón Cobre","61","cliente"],
+  ["CODELCO","Exterior B","52","hot"],
+  ["Minera El Abra","Exterior B","51","hot"],
+  ["Samson Control","Pabellón Cobre","45","competidor"],
+  ["Larce Electric","Exterior B","42","cliente"],
+  ["Novandina Litio","Exterior B","36","hot"],
+  ["SQM","Exterior B","36","hot"],
+  ["Colbún S.A.","Exterior A","32","hot"],
+  ["Lipigas","Exterior A","17","cliente"],
+  ["WAGO","Pabellón Cobre","78","competidor"],
+  ["DESIMAT","Pabellón Cobre","79","cliente"],
+];
+var F='all';
+function set(f){F=f;document.querySelectorAll('.flt').forEach(b=>b.classList.remove('on'));event.target.classList.add('on');render()}
+function f(){render()}
+function render(){
+var s=document.getElementById('s').value.toLowerCase();
+var rows=D.filter(function(r){var ok=F==='all'||r[3]===F||(F==='hot'&&r[3]==='hot')||(F==='litio'&&r[1].includes('Litio'))||(F==='cobre'&&r[1].includes('Cobre'));return ok&&(!s||r[0].toLowerCase().includes(s)||r[1].toLowerCase().includes(s))});
+document.getElementById('tb').innerHTML=rows.map(function(r,i){
+var cls=r[3]==='hot'?'hot':r[3]==='competidor'?'competitor':'';
+var tag=r[3]==='hot'?'<span class="tag tag-hot">🔥 LEAD</span>':r[3]==='competidor'?'<span class="tag tag-comp">⚠️ COMP.</span>':r[3]==='cliente'?'<span class="tag tag-cliente">✅</span>':'';
+return '<tr class="'+cls+'"><td>'+(i+1)+'</td><td><strong>'+r[0]+'</strong>'+tag+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>';
+}).join('');
+}
+render();
+</script></body></html>

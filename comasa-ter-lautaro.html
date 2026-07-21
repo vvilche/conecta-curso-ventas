@@ -50,6 +50,8 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.68rem}
 <div class="hero-stats">
 <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Unidades</div></div>
 <div class="hstat"><div class="hstat-n">CEN</div><div class="hstat-l">Coordinado</div></div>
+<div class="hstat"><div class="hstat-n">12</div><div class="hstat-l">Dispositivos Campo</div></div>
+<div class="hstat"><div class="hstat-n">7</div><div class="hstat-l">Apps Tier0</div></div>
 <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Partners</div></div>
 </div>
 </div>
@@ -59,6 +61,7 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.68rem}
 <a href="#diagnostico" class="on">Diagnostico</a>
 <a href="#arquitectura">Arquitectura</a>
 <a href="#metodologia">Metodologia</a>
+<a href="#tier0">Tier0 + Dispositivos</a>
 <a href="#anexo">Anexo Tecnico</a>
 </div>
 
@@ -180,6 +183,129 @@ footer{text-align:center;padding:2rem;color:var(--muted);font-size:.68rem}
 <tr style="background:#f0fdf4;font-weight:700"><td>TOTAL PARTIDA EN FRIO</td><td>10.9</td><td>4.7</td><td>135,700</td></tr>
 <tr><td>Carga Nominal → Desconexion</td><td>1.0</td><td>1.5</td><td>15,000</td></tr>
 <tr><td>Desconexion → Apagado</td><td>3.0</td><td>2.2</td><td>1,000</td></tr>
+</table>
+</div>
+
+
+<h2 id="tier0">🖥️ TIER0 — Plataforma de Monitoreo y Control</h2>
+
+<div class="diagram-container">
+<h3>🟢 Arquitectura Tier0 UNS + Dispositivos de Campo</h3>
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="480" fill="#f8fafc" rx="8"/>
+
+  <!-- NUBE / CENTRO CONTROL -->
+  <rect x="250" y="10" width="400" height="45" rx="8" fill="#1e3a8a"/>
+  <text x="450" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">🖥️ TIER0 UNS — Grafana · MQTT · Node-RED · TimescaleDB</text>
+  <text x="450" y="48" text-anchor="middle" font-size="7" fill="#93c5fd">Dashboards · Alarmas WhatsApp · Reportes CEN · Predictivo</text>
+
+  <line x1="450" y1="55" x2="450" y2="85" stroke="#3b82f6" stroke-width="2"/>
+
+  <!-- RED OT -->
+  <rect x="100" y="85" width="700" height="20" rx="4" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="450" y="99" text-anchor="middle" font-size="7" fill="#1e40af">🔵 Belden/Hirschmann Switches Red OT · Anillo PRP · Segmentacion VLAN · Fibra Optica</text>
+
+  <!-- GATEWAYS -->
+  <line x1="200" y1="105" x2="200" y2="130" stroke="#93c5fd" stroke-width="1.5"/>
+  <line x1="450" y1="105" x2="450" y2="130" stroke="#93c5fd" stroke-width="1.5"/>
+  <line x1="700" y1="105" x2="700" y2="130" stroke="#93c5fd" stroke-width="1.5"/>
+
+  <rect x="80" y="130" width="200" height="55" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="180" y="150" text-anchor="middle" font-size="8" font-weight="700" fill="#2563eb">NovaTech OrionLX+</text>
+  <text x="180" y="165" text-anchor="middle" font-size="6" fill="#64748b">RTU Gateway · DNP3/IEC 61850</text>
+  <text x="180" y="178" text-anchor="middle" font-size="6" fill="#10b981">Bridge MQTT ← protocolos legacy</text>
+
+  <rect x="340" y="130" width="220" height="55" rx="6" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="450" y="150" text-anchor="middle" font-size="8" font-weight="700" fill="#2563eb">SUPCON G5Pro PLC x2</text>
+  <text x="450" y="165" text-anchor="middle" font-size="6" fill="#64748b">UGL1 + UGL2 · Modbus TCP · Ethernet</text>
+  <text x="450" y="178" text-anchor="middle" font-size="6" fill="#10b981">Control + Adquisicion datos de campo</text>
+
+  <rect x="620" y="130" width="190" height="55" rx="6" fill="#faf5ff" stroke="#c4b5fd"/>
+  <text x="715" y="150" text-anchor="middle" font-size="8" font-weight="700" fill="#7c3aed">Kronos 3R GPS</text>
+  <text x="715" y="165" text-anchor="middle" font-size="6" fill="#64748b">GPS+GALILEO · 60ns precision</text>
+  <text x="715" y="178" text-anchor="middle" font-size="6" fill="#10b981">Sincronismo red OT</text>
+
+  <!-- DISPOSITIVOS DE CAMPO -->
+  <line x1="300" y1="185" x2="300" y2="210" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="450" y1="185" x2="450" y2="210" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="600" y1="185" x2="600" y2="210" stroke="#93c5fd" stroke-width="1"/>
+
+  <rect x="50" y="210" width="800" height="25" rx="4" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="450" y="227" text-anchor="middle" font-size="8" fill="#10b981">🔵 DISPOSITIVOS DE CAMPO — Medicion, Control y Monitoreo para TER Lautaro</text>
+
+  <!-- Row 1: Caldera sensors -->
+  <rect x="20" y="250" width="170" height="70" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="105" y="270" text-anchor="middle" font-size="7" font-weight="700" fill="#d97706">CALDERA</text>
+  <text x="105" y="285" text-anchor="middle" font-size="6" fill="#64748b">🔵 CXT Presion 65/92 bar</text>
+  <text x="105" y="298" text-anchor="middle" font-size="6" fill="#64748b">🔵 CXT Temp 475/522°C</text>
+  <text x="105" y="311" text-anchor="middle" font-size="6" fill="#64748b">🔵 SFE900 Caudal vapor</text>
+
+  <rect x="200" y="250" width="170" height="70" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="285" y="270" text-anchor="middle" font-size="7" font-weight="700" fill="#d97706">TURBINA</text>
+  <text x="285" y="285" text-anchor="middle" font-size="6" fill="#64748b">🔵 Sensor Vibracion 4888/7016 rpm</text>
+  <text x="285" y="298" text-anchor="middle" font-size="6" fill="#64748b">🔵 CXT Temp aceite</text>
+  <text x="285" y="311" text-anchor="middle" font-size="6" fill="#64748b">🔵 Vizimax SynchroTeq sincro</text>
+
+  <rect x="380" y="250" width="170" height="70" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="465" y="270" text-anchor="middle" font-size="7" font-weight="700" fill="#d97706">GENERADOR</text>
+  <text x="465" y="285" text-anchor="middle" font-size="6" fill="#64748b">🔵 Bitronics M650 0.2s</text>
+  <text x="465" y="298" text-anchor="middle" font-size="6" fill="#64748b">MW · Voltaje · FP · Hz</text>
+  <text x="465" y="311" text-anchor="middle" font-size="6" fill="#64748b">🔵 CXT Temp devanados</text>
+
+  <rect x="560" y="250" width="170" height="70" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="645" y="270" text-anchor="middle" font-size="7" font-weight="700" fill="#d97706">COMBUSTIBLE</text>
+  <text x="645" y="285" text-anchor="middle" font-size="6" fill="#64748b">🔵 CXT Peso silo (presion)</text>
+  <text x="645" y="298" text-anchor="middle" font-size="6" fill="#64748b">🔵 Sensor Humedad biomasa</text>
+  <text x="645" y="311" text-anchor="middle" font-size="6" fill="#64748b">🔵 Correas: sensor velocidad</text>
+
+  <rect x="740" y="250" width="140" height="70" rx="6" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="810" y="270" text-anchor="middle" font-size="7" font-weight="700" fill="#d97706">EMISIONES</text>
+  <text x="810" y="285" text-anchor="middle" font-size="6" fill="#64748b">🔵 CXT P dif filtro</text>
+  <text x="810" y="298" text-anchor="middle" font-size="6" fill="#64748b">🔵 Sensor opacidad</text>
+  <text x="810" y="311" text-anchor="middle" font-size="6" fill="#64748b">Cumpl. D.S.13</text>
+
+  <!-- Row 2: Auxiliares -->
+  <rect x="50" y="335" width="800" height="50" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="450" y="355" text-anchor="middle" font-size="7" font-weight="700" fill="#1e293b">SISTEMAS AUXILIARES</text>
+  <text x="450" y="372" text-anchor="middle" font-size="6" fill="#64748b">🔵 SL90 Radar Nivel tanques · 🔵 CXT Presion bombas · 🔵 SFE900 Caudal agua enfriamiento · 🔵 CVP2000 Valvulas control</text>
+
+  <!-- Bottom bar -->
+  <rect x="100" y="400" width="700" height="30" rx="6" fill="#f0fdf4" stroke="#86efac"/>
+  <text x="450" y="420" text-anchor="middle" font-size="7" fill="#10b981">✅ Todos los dispositivos → Modbus TCP/Ethernet → PLC G5Pro → Tier0 UNS → Grafana Dashboards</text>
+
+</svg>
+</div>
+
+<div class="section">
+<h3>Dispositivos de Campo por Area</h3>
+<table>
+<tr><th>Area</th><th>Dispositivo</th><th>Marca</th><th>Variable</th><th>Protocolo</th></tr>
+<tr class="win"><td>Caldera UGL1</td><td>CXT Presion</td><td>SUPCON (±0.035%)</td><td>65 bar vapor sobrecalentado</td><td>HART/Modbus</td></tr>
+<tr class="win"><td>Caldera UGL2</td><td>CXT Presion</td><td>SUPCON (±0.035%)</td><td>92 bar vapor sobrecalentado</td><td>HART/Modbus</td></tr>
+<tr class="win"><td>Caldera</td><td>CXT Temperatura</td><td>SUPCON</td><td>475°C / 522°C</td><td>HART/Modbus</td></tr>
+<tr class="win"><td>Caldera</td><td>SFE900 Caudal</td><td>SUPCON (±0.2%)</td><td>90 / 80 ton/h vapor</td><td>Modbus</td></tr>
+<tr class="win"><td>Turbina</td><td>Sensor Vibracion</td><td>SUPCON PRIDE</td><td>4888/7016 rpm · Vibracion ejes</td><td>Modbus</td></tr>
+<tr class="win"><td>Turbina</td><td>CXT Temperatura</td><td>SUPCON</td><td>Temp aceite lubricacion</td><td>HART/Modbus</td></tr>
+<tr class="win"><td>Turbina</td><td>SynchroTeq Plus</td><td>Vizimax</td><td>Sincronismo point-on-wave</td><td>IEC 61850</td></tr>
+<tr class="win"><td>Generador</td><td>Bitronics M650</td><td>NovaTech (0.2s)</td><td>MW · Voltaje · FP · Hz · Energia</td><td>Modbus/DNP3</td></tr>
+<tr class="win"><td>Combustible</td><td>SL90 Radar</td><td>SUPCON (80GHz)</td><td>Nivel silo biomasa</td><td>HART/Modbus</td></tr>
+<tr class="win"><td>Combustible</td><td>Sensor Humedad</td><td>SUPCON</td><td>% Humedad biomasa en linea</td><td>Modbus</td></tr>
+<tr class="win"><td>Emisiones</td><td>CXT P Diferencial</td><td>SUPCON (±0.035%)</td><td>Caida presion filtro mangas</td><td>HART/Modbus</td></tr>
+<tr class="win"><td>Auxiliares</td><td>CVP2000 Valvulas</td><td>SUPCON (±0.5%)</td><td>Control agua/vapor/combustible</td><td>HART</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h3>Aplicaciones Tier0 para TER Lautaro</h3>
+<table>
+<tr><th>Aplicacion</th><th>Software</th><th>Descripcion</th></tr>
+<tr class="win"><td>Dashboard Operaciones</td><td>Grafana</td><td>Pantalla principal con los 6 subsistemas en tiempo real. Acceso desde sala control y remoto.</td></tr>
+<tr class="win"><td>Historicos y Tendencias</td><td>TimescaleDB</td><td>Almacenamiento de todas las variables cada 1 segundo. Retencion configurable (1 año+).</td></tr>
+<tr class="win"><td>Alarmas WhatsApp</td><td>Node-RED</td><td>Flujo: sensor > MQTT > regla logica > mensaje WhatsApp al operador/jefe turno.</td></tr>
+<tr class="win"><td>Reportes CEN</td><td>Node-RED + Python</td><td>Generacion automatica de parametros de partida/detencion en formato exigido por el CEN.</td></tr>
+<tr class="win"><td>Mantenimiento Predictivo</td><td>TimescaleDB + Grafana</td><td>Tendencias de vibracion, presion diferencial filtros, consumo anomalo → alerta temprana.</td></tr>
+<tr class="win"><td>Eficiencia Energetica</td><td>Grafana</td><td>Heat rate en tiempo real (Kcal → MWh). Comparativa UGL1 vs UGL2. Track de consumo biomasa.</td></tr>
+<tr class="win"><td>Integracion CEN</td><td>MQTT Bridge</td><td>Publicacion de datos al Coordinador via DNP3/IEC 61850 desde OrionLX+.</td></tr>
 </table>
 </div>
 

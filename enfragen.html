@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CONECTA — Propuesta Integrada EnfraGen Chile | Due Diligence + NFPA 70B</title>
+<style>
+:root{--bg:#f8fafc;--accent:#2563eb;--dark:#0f172a;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--win:#f0fdf4;--okborder:#16a34a}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 100%);color:#fff;padding:72px 0 64px}
+.hero h1{font-family:Outfit,sans-serif;font-size:34px;font-weight:800;line-height:1.15;margin-bottom:16px}
+.hero p{font-size:17px;color:#cbd5e1;max-width:720px}
+.eyebrow{display:inline-block;background:rgba(37,99,235,.25);color:#bfdbfe;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.stats{display:flex;gap:36px;margin-top:32px;flex-wrap:wrap}
+.stat{min-width:130px}
+.stat b{display:block;font-family:'IBM Plex Mono',monospace;font-size:30px;color:#93c5fd}
+.stat span{font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{display:flex;gap:22px;padding:12px 24px;overflow-x:auto}
+nav a{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;font-weight:500}
+nav a:hover{color:var(--accent)}
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-family:Outfit,sans-serif;font-size:24px;font-weight:800;margin-bottom:8px}
+.lead{color:var(--muted);margin-bottom:24px;font-size:15px}
+h3{font-size:16px;font-weight:700;margin:24px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th{text-align:left;padding:9px 10px;background:var(--dark);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even){background:#fff}
+.badge{display:inline-block;padding:2px 9px;border-radius:100px;font-size:11px;font-weight:700;white-space:nowrap}
+.b-green{background:#dcfce7;color:#166534}
+.b-blue{background:#dbeafe;color:#1e40af}
+.b-orange{background:#ffedd5;color:#9a3412}
+.b-amber{background:#fef3c7;color:#92400e}
+.hl{background:rgba(37,99,235,.03);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;margin:16px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px}
+.card h4{font-size:14px;margin-bottom:10px}
+.card ul{font-size:13px;padding-left:18px}
+.card li{margin:6px 0}
+.step{display:flex;gap:14px;margin:14px 0}
+.step-num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
+.step b{font-size:14px}
+.step p{font-size:13px;color:var(--muted)}
+.win{background:var(--win)!important}
+.total td{font-weight:800;font-size:14px;border-top:2px solid var(--dark)}
+.linehead{display:flex;align-items:center;gap:12px;margin:32px 0 4px}
+.linehead .ln{flex:0 0 40px;height:40px;border-radius:12px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;font-family:'IBM Plex Mono',monospace}
+.linehead h2{margin:0}
+.base{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);font-weight:600}
+.cta{background:var(--dark);color:#fff;padding:56px 0;text-align:center}
+.cta h2{color:#fff;margin-bottom:12px}
+.cta p{color:#cbd5e1;margin-bottom:20px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 32px;border-radius:100px;text-decoration:none;font-weight:700;font-size:14px}
+.footer{background:#0b1220;color:#94a3b8;font-size:12px;padding:24px 0;text-align:center}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="wrap">
+<span class="eyebrow">Propuesta integrada · Dos líneas de servicio</span>
+<h1>Due Diligence Técnico + Auditoría NFPA 70B<br>EnfraGen Chile — Willka, Taira, Tamarico y Doña Antonia</h1>
+<p>Diagnóstico documental de la ingeniería eléctrica y auditoría de respaldo/verificación de relés de protección ≥23 kV, con repositorio auditable por central, bahía y relé.</p>
+<div class="stats">
+<div class="stat"><b>4</b><span>Centrales solares</span></div>
+<div class="stat"><b>62</b><span>Relés identificados</span></div>
+<div class="stat"><b>33 / 34.5 / 110 / 220</b><span>Niveles kV</span></div>
+<div class="stat"><b>~80%</b><span>Dominancia Siemens</span></div>
+</div>
+</div>
+</div>
+
+<nav><div class="wrap">
+<a href="#diagnostico">Diagnóstico</a>
+<a href="#linea1">Línea 1 · Due Diligence</a>
+<a href="#linea2">Línea 2 · Auditoría NFPA 70B</a>
+<a href="#metodologia">Metodología</a>
+<a href="#inversion">Inversión</a>
+<a href="#condiciones">Condiciones</a>
+<a href="#anexo">Anexo</a>
+</div></nav>
+
+<section id="diagnostico"><div class="wrap">
+<h2>Diagnóstico del portafolio</h2>
+<p class="lead">Fuente: InfoTécnica CEN (111 archivos, 40 planos leídos con visión de alta precisión). Inventario consolidado por central.</p>
+<table>
+<tr><th>Central</th><th>NUP</th><th>Ubicación</th><th>Relés</th><th>Marca dominante</th></tr>
+<tr><td><b>Willka</b></td><td>2243</td><td>Arica</td><td>20</td><td>Siemens ×16 · SEL ×4</td></tr>
+<tr><td><b>Taira</b></td><td>1042</td><td>Tocopilla</td><td>11</td><td>Siemens ×9 · TAPCON ×1 · SEL ×1</td></tr>
+<tr><td><b>Tamarico</b></td><td>876</td><td>Región Metropolitana</td><td>23</td><td>Siemens ×15 · ABB ×3 · SEL ×1 · GE ×1 · Schneider ×1 · PMU ×1</td></tr>
+<tr><td><b>Doña Antonia</b></td><td>2684</td><td>Ovalle</td><td>8</td><td>Siemens ×5 · SEL ×1 · TAPCON ×1 · Ilegible ×1</td></tr>
+<tr class="total"><td colspan="3">Total</td><td>62</td><td>—</td></tr>
+</table>
+<div class="hl"><b>Lectura clave:</b> ~80% del parque es Siemens SIPROTEC 4/5 (una sola herramienta, DIGSI, cubre la mayor parte del backup). Los bolsillos ABB (PCM600), GE (Enervista), SEL (AcSELerator) y Schneider (ION Setup) requieren software de acceso adicional — coincidente con el requisito del pliego.</div>
+<div class="hl"><b>Oportunidad detectada:</b> Tamarico (152 MW, la mayor del portafolio) figura sin SCADA informado en CEN. El levantamiento de protecciones deja abierta la puerta a un alcance complementario de SCADA/RTU/PMU sobre la misma visita.</div>
+</div></section>
+
+<section id="linea1"><div class="wrap">
+<div class="linehead"><div class="ln">1</div><h2>Due Diligence Técnico Eléctrico</h2></div>
+<p class="base">Base técnica GFN-SCS-ING-BBT-0003</p>
+<p class="lead">Revisión de escritorio de la ingeniería eléctrica de los 4 activos. Sin visita a terreno, sin mediciones, sin pruebas.</p>
+
+<h3>Disciplinas evaluadas</h3>
+<div class="grid">
+<div class="card"><h4>Disciplinas según pliego</h4><ul>
+<li>Protecciones (relés, funciones ANSI, ajustes)</li>
+<li>Puesta a tierra (malla, conductor, retícula)</li>
+<li>Coordinación de aislamiento (pararrayos)</li>
+<li>Equipos principales (transformadores, GIS, interruptores)</li>
+<li>Control y comunicaciones (IEC 61850, SCADA, PMU)</li></ul></div>
+<div class="card"><h4>Entregables</h4><ul>
+<li>Matriz de cumplimiento por activo y disciplina</li>
+<li>Brechas documentales y técnicas consolidadas</li>
+<li>Severidad por brecha (crítica / alta / media / baja)</li>
+<li>Recomendaciones de cierre priorizadas</li>
+<li>Informe Word + PDF trazable</li></ul></div>
+</div>
+
+<h3>Brechas detectadas (desde planos)</h3>
+<table>
+<tr><th>#</th><th>Brecha</th><th>Severidad</th></tr>
+<tr><td>1</td><td>Estándares técnicos internos EnfraGen no entregados (base de comparación del cumplimiento)</td><td><span class="badge b-amber">CRÍTICA</span></td></tr>
+<tr><td>2</td><td>Estudios de coordinación de protecciones ausentes en expediente público</td><td><span class="badge b-orange">ALTA</span></td></tr>
+<tr><td>3</td><td>Sin SCADA informado en CEN (Tamarico)</td><td><span class="badge b-orange">ALTA</span></td></tr>
+<tr><td>4</td><td>Memorias de cálculo de malla a tierra (EMT) con resistencia objetivo no públicas</td><td><span class="badge b-orange">ALTA</span></td></tr>
+<tr><td>5</td><td>4 PDFs vacíos en servidor CEN (cartas DE + consumos propios, Taira)</td><td><span class="badge b-amber">MEDIA</span></td></tr>
+<tr><td>6</td><td>Relés de S/E La Ruca no legibles en plano (Doña Antonia)</td><td><span class="badge b-amber">MEDIA</span></td></tr>
+<tr><td>7</td><td>Autotransformador Parinacota: potencia/grupo ilegible en plano</td><td><span class="badge b-amber">MEDIA</span></td></tr>
+<tr><td>8</td><td>Malla de Tamarico SE2 solo en DWG, sin PDF legible</td><td><span class="badge b-amber">MEDIA</span></td></tr>
+<tr><td>9</td><td>Firmware/versión de relés ausente en planos (los 4 activos)</td><td><span class="badge b-amber">MEDIA</span></td></tr>
+<tr><td>10</td><td>Ambigüedad relé de trafo Tamarico (7SJ85 vs 7UT85)</td><td><span class="badge b-blue">BAJA</span></td></tr>
+</table>
+<div class="hl"><b>Nota metodológica:</b> la calificación de "cumplimiento" requiere los estándares internos EnfraGen como base de comparación. Sin ellos, el informe entrega evidencia disponible y brechas observables desde planos, con la matriz de veredicto lista para completarse al recibir la documentación.</div>
+</div></section>
+
+<section id="linea2"><div class="wrap">
+<div class="linehead"><div class="ln">2</div><h2>Auditoría, Respaldo y Verificación NFPA 70B</h2></div>
+<p class="base">Base técnica GFN-SCS-ING-BBT-0002</p>
+<p class="lead">Lectura de configuraciones, exportación de archivos nativos y legibles, verificación de cumplimiento NFPA 70B y consolidación de un repositorio auditable por central/bahía/relé. Ejecución sin modificar parámetros, bajo trazabilidad, seguridad y confidencialidad.</p>
+
+<h3>Alcance — 10 actividades</h3>
+<table>
+<tr><th>#</th><th>Actividad</th><th>Detalle</th></tr>
+<tr><td>1</td><td>Inventario y caracterización de relés ≥23 kV</td><td>Levantamiento por central, incluyendo alimentadores, líneas, transformadores, barras, control y PMU.</td></tr>
+<tr><td>2</td><td>Identificación de bahía y relé en terreno</td><td>Fotografía de placa, código interno, ubicación exacta, correspondencia con planos.</td></tr>
+<tr><td>3</td><td>Conexión y lectura de configuraciones</td><td>USB/serial/Ethernet según fabricante. Ajustes, lógica, comunicaciones, IEC 61850, TC/TP.</td></tr>
+<tr><td>4</td><td>Exportación de archivos nativos y legibles</td><td>Formato nativo (DXP, RDB, CFG/XML, ICD/CID) + legible (PDF/TXT) con metadatos.</td></tr>
+<tr><td>5</td><td>Registro técnico del relé</td><td>Firmware, funciones ANSI activas/desactivadas, TC/TP, IP, IED Name, estado de memoria.</td></tr>
+<tr><td>6</td><td>Verificación COMTRADE (IEEE C37.111)</td><td>Formato CFG+DAT, triggers, pre-falla/post-falla, nomenclatura CEN (SLRP), memoria.</td></tr>
+<tr><td>7</td><td>Verificación IEC 61850 (GOOSE/MMS)</td><td>Suscripciones GOOSE, reportes MMS, captura Wireshark, comparación CID/ICD.</td></tr>
+<tr><td>8</td><td>Contraste as-built vs. as-configured</td><td>Funciones ANSI, curvas/tiempos, TC/TP, IP/topología SCADA, lógica. Discrepancias por severidad.</td></tr>
+<tr><td>9</td><td>Verificación de cumplimiento NFPA 70B</td><td>Intervalos de inspección, trazabilidad documental, brechas y recomendaciones de cierre.</td></tr>
+<tr><td>10</td><td>Consolidación del repositorio auditable</td><td>Carpetas por central/bahía/relé, índice Excel, fichas, fotos y validación de integridad.</td></tr>
+</table>
+
+<h3>Preparación para terreno</h3>
+<div class="grid">
+<div class="card"><h4>Software (notebook de terreno)</h4><ul>
+<li>DIGSI 5 — SIPROTEC 5 (7SL87, 7UT85, 7SJ82/85, 7SA87, 7SS85, 7VK87, 6MD85)</li>
+<li>DIGSI 4 — SIPROTEC 4 (7SS522/523, 7UT6331)</li>
+<li>PCM600 — ABB (REL670, REB500, REC670)</li>
+<li>AcSELerator QuickSet — SEL (735, 735A, 2440)</li>
+<li>Enervista — GE (Multilin D60)</li>
+<li>ION Setup — Schneider (ION-8650)</li>
+<li>Wireshark — análisis IEC 61850 / GOOSE / MMS</li></ul></div>
+<div class="card"><h4>Interfaces e instrumentos</h4><ul>
+<li>Serial RS-232/485 + USB-serial</li>
+<li>Ethernet + switch portátil</li>
+<li>USB-fibra óptica (IEC 61850)</li>
+<li>Test plugs por marca</li>
+<li>Maleta de inyección secundaria (opcional)</li>
+<li>Multímetro + pinza amperométrica</li></ul></div>
+</div>
+<div class="hl"><b>Nota de licenciamiento:</b> el software de lectura/backup (DIGSI, PCM600, AcSELerator, Enervista, ION Setup) es gratuito para extracción de ajustes. Solo se requiere licencia de ingeniería si el alcance incluye modificación de ajustes — a validar en el alcance final.</div>
+</div></section>
+
+<section id="metodologia"><div class="wrap">
+<h2>Metodología</h2>
+<p class="lead">Flujo de trabajo en cuatro bloques, de escritorio a entrega, aplicado a las dos líneas de servicio.</p>
+<div class="step"><div class="step-num">1</div><div><b>Dirección y definición</b><p>Alcance, plantillas de captura, inventario de relés y coordinación de ventanas de acceso con el cliente.</p></div></div>
+<div class="step"><div class="step-num">2</div><div><b>Levantamiento en terreno</b><p>Identificación, lectura y respaldo de los 62 relés por central, con registro de placa, firmware y versión.</p></div></div>
+<div class="step"><div class="step-num">3</div><div><b>Ingeniería de gabinete</b><p>Contraste as-built vs as-configured, verificación COMTRADE / IEC 61850 y NFPA 70B, clasificación de brechas.</p></div></div>
+<div class="step"><div class="step-num">4</div><div><b>Entrega</b><p>Repositorio auditable por central/bahía/relé, índice Excel e informe técnico firmado por CONECTA.</p></div></div>
+
+<h3>Logística por central</h3>
+<table>
+<tr><th>Central</th><th>Ubicación</th><th>Relés</th><th>Subestaciones</th></tr>
+<tr><td><b>Tamarico</b></td><td>Región Metropolitana</td><td>23</td><td>Elevadora · SWG 33 kV · Verbenas · Caserones · Maitencillo</td></tr>
+<tr><td><b>Willka</b></td><td>Arica</td><td>20</td><td>S/E 220/33 kV · SWG 33 kV · Parinacota (conexión)</td></tr>
+<tr><td><b>Taira</b></td><td>Tocopilla</td><td>11</td><td>S/E 220/34.5 kV · SWG 34.5 kV</td></tr>
+<tr><td><b>Doña Antonia</b></td><td>Ovalle</td><td>8</td><td>S/E 110/33 kV · SWG 33 kV · La Ruca (conexión)</td></tr>
+</table>
+
+<h3>Control de calidad</h3>
+<div class="grid">
+<div class="card"><h4>Durante el terreno</h4><ul>
+<li>Plantillas de captura definidas antes de la visita</li>
+<li>Revisión de cada respaldo al cierre del día</li>
+<li>Verificación de integridad de los archivos leídos</li></ul></div>
+<div class="card"><h4>Antes de la entrega</h4><ul>
+<li>Aprobación de cada entregable por central</li>
+<li>Contraste completo contra el estudio de coordinación</li>
+<li>Informe y repositorio firmados por CONECTA</li></ul></div>
+</div>
+</div></section>
+
+<section id="inversion"><div class="wrap">
+<h2>Inversión estimada</h2>
+<p class="lead">Valores referenciales en UF, a confirmar con el alcance final y las ventanas de terreno.</p>
+<table>
+<tr><th>Línea</th><th>Servicio</th><th>Base técnica</th><th>Valor</th></tr>
+<tr><td><b>1</b></td><td>Due Diligence Técnico Eléctrico</td><td>GFN-SCS-ING-BBT-0003</td><td>400 UF</td></tr>
+<tr><td><b>2</b></td><td>Auditoría, respaldo y verificación NFPA 70B</td><td>GFN-SCS-ING-BBT-0002</td><td>1.250 UF</td></tr>
+<tr class="total"><td colspan="3">Total</td><td>1.650 UF</td></tr>
+</table>
+<p class="note">Referencia: 1.650 UF ≈ 66.000 USD (a 40 USD/UF). Valores netos, más IVA. Los valores de terreno, horas y logística se afinan al confirmar la cantidad de bahías accesibles y las ventanas de acceso. Sujeto a diagnóstico formal, sin compromiso de plazo.</p>
+</div></section>
+
+<section id="condiciones"><div class="wrap">
+<h2>Condiciones y exclusiones</h2>
+<h3>Condiciones comerciales</h3>
+<div class="card"><ul>
+<li>Precios netos, no incluyen IVA.</li>
+<li>Moneda de pago: pesos chilenos al valor de la UF a la fecha de facturación.</li>
+<li>Hitos de pago: 50% contra orden de compra · 50% contra entrega de la documentación.</li>
+<li>Facturación a crédito 30 días.</li>
+<li>Validez de la oferta: 15 días hábiles.</li>
+<li>Cláusula de reajustabilidad por UF para proyectos de duración extendida.</li></ul></div>
+<h3>Exclusiones</h3>
+<div class="card"><ul>
+<li>Acreditación de personal, vehículos y equipos (inducciones, exámenes médicos, cursos) — a cargo del Coordinado/Cliente.</li>
+<li>Gestión de permisos y accesos a subestaciones de terceros (Parinacota, Caserones, Maitencillo, La Ruca) — a coordinar con el transmisor.</li>
+<li>Relés sin credenciales de acceso (password de ingeniería u operador): se registran como brecha de acceso.</li>
+<li>Mantenimiento físico de equipos (termografía, DGA, torque) — fuera del pliego.</li>
+<li>Generación del estudio de coordinación si EnfraGen no dispone de él — servicio complementario.</li>
+<li>Modificación de ajustes/parámetros de los relés (solo lectura y respaldo).</li>
+<li>Boletas de garantía, pólizas y multas de ningún tipo.</li>
+<li>Servicios de ciberseguridad y protocolos/documentos para validación ante el CEN — requieren oferta separada.</li></ul></div>
+</div></section>
+
+<section id="anexo"><div class="wrap">
+<h2>Anexo técnico</h2>
+<h3>Herramientas por marca de relé</h3>
+<table>
+<tr><th>Fabricante</th><th>Relés</th><th>Software de backup</th></tr>
+<tr><td>Siemens</td><td>7SL87, 7UT85, 7SJ82/85, 7SA87, 7SS85, 7VK87, 6MD85, 7SS522/523, 7UT6331</td><td>DIGSI 4 / DIGSI 5</td></tr>
+<tr><td>ABB</td><td>REL670, REB500, REC670</td><td>PCM600</td></tr>
+<tr><td>SEL</td><td>735, 735A, 2440</td><td>AcSELerator QuickSet</td></tr>
+<tr><td>GE</td><td>Multilin D60</td><td>Enervista</td></tr>
+<tr><td>Schneider</td><td>ION-8650</td><td>ION Setup</td></tr>
+</table>
+<h3>Cumplimiento CEN</h3>
+<p class="lead">Todas las subestaciones operan IEC 61850 (GOOSE/MMS). El servicio contempla la verificación de COMTRADE (SLRP) y deja la base para eventuales alcances de SITR, EDAC y WAM/PMU.</p>
+<div class="hl"><b>Alcance complementario:</b> Tamarico sin SCADA informado en CEN → oportunidad de RTU/SCADA, PMU y redes OT sobre la misma visita, bajo oferta separada.</div>
+</div></section>
+
+<div class="cta"><div class="wrap">
+<h2>¿Avanzamos con el diagnóstico formal?</h2>
+<p>CONECTA Ingeniería — Integración de protecciones, SCADA y cumplimiento CEN.</p>
+<a class="btn" href="mailto:contacto@conecta.cl">Solicitar diagnóstico</a>
+</div></div>
+
+<div class="footer"><div class="wrap">CONECTA Ingeniería · Integración de protecciones y cumplimiento normativo CEN · contacto@conecta.cl</div></div>
+
+</body>
+</html>
